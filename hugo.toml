@@ -1,95 +1,81 @@
 baseURL = "https://poorants.github.io/"
-languageCode = "ko-kr"
-defaultContentLanguage = "ko"
 title = "poorants — dev log"
-theme = "PaperMod"
+theme = "hextra"
+
+defaultContentLanguage = "ko"
+hasCJKLanguage = true
 
 enableRobotsTXT = true
+enableGitInfo = true
 enableEmoji = true
-buildDrafts = false
-buildFuture = false
-buildExpired = false
-
-[pagination]
-pagerSize = 10
-
-[minify]
-disableXML = true
-minifyOutput = true
 
 [outputs]
-home = ["HTML", "RSS", "JSON"]
+home = ["HTML"]
+page = ["HTML"]
+section = ["HTML", "RSS"]
 
-[params]
-env = "production"
-title = "poorants — dev log"
-description = "사이드 프로젝트와 그 과정의 개발 기록"
-DateFormat = "2006-01-02"
-defaultTheme = "auto"
-ShowReadingTime = true
-ShowShareButtons = false
-ShowPostNavLinks = true
-ShowBreadCrumbs = true
-ShowCodeCopyButtons = true
-ShowWordCount = true
-ShowToc = true
-TocOpen = false
-disableSpecial1stPost = false
-disableScrollToTop = false
-comments = false
-hidemeta = false
-hideSummary = false
+[markup.goldmark.renderer]
+unsafe = true
 
-[params.homeInfoParams]
-Title = "poorants"
-Content = "사이드 프로젝트와 그 과정의 개발 기록"
-
-[[params.socialIcons]]
-name = "github"
-url = "https://github.com/poorants"
-
-[params.assets]
-disableHLJS = true
-favicon = "/favicon.ico"
-
-[params.fuseOpts]
-isCaseSensitive = false
-shouldSort = true
-location = 0
-distance = 1000
-threshold = 0.4
-minMatchCharLength = 0
-keys = ["title", "permalink", "summary", "content"]
+[markup.highlight]
+noClasses = false
 
 [[menu.main]]
-identifier = "posts"
+identifier = "blog"
 name = "글"
-url = "/posts/"
-weight = 10
+pageRef = "/blog"
+weight = 1
 
 [[menu.main]]
-identifier = "tags"
-name = "태그"
-url = "/tags/"
-weight = 20
+identifier = "about"
+name = "소개"
+pageRef = "/about"
+weight = 2
 
 [[menu.main]]
 identifier = "search"
 name = "검색"
-url = "/search/"
-weight = 30
+weight = 3
+[menu.main.params]
+type = "search"
 
 [[menu.main]]
-identifier = "archives"
-name = "보관소"
-url = "/archives/"
-weight = 40
+identifier = "github"
+name = "GitHub"
+weight = 4
+url = "https://github.com/poorants"
+[menu.main.params]
+icon = "github"
 
-[markup.highlight]
-codeFences = true
-guessSyntax = true
-lineNos = false
-style = "monokai"
+[params.navbar]
+displayTitle = true
+displayLogo = false
 
-[markup.goldmark.renderer]
-unsafe = true
+[params.page]
+width = "normal"
+
+[params.theme]
+default = "system"
+displayToggle = true
+
+[params.footer]
+enable = true
+displayCopyright = true
+displayPoweredBy = true
+width = "normal"
+
+[params.search]
+enable = true
+type = "flexsearch"
+[params.search.flexsearch]
+index = "content"
+tokenize = "forward"
+
+[params.blog.list]
+displayTags = true
+sortBy = "date"
+sortOrder = "desc"
+
+[params]
+displayUpdatedDate = true
+dateFormat = "2006-01-02"
