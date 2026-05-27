@@ -37,14 +37,14 @@ testid 를 할당하는 것 자체는 좋다. 다만 컴포넌트가 늘어나�
 
 ```javascript
 javascript:(function () {
-  // 이미 켜져 있으면 토글로 종료
+  // Already active → toggle off
   if (window.__tidActive && window.__tidStop) {
     window.__tidStop();
     return;
   }
   window.__tidActive = true;
 
-  // 호버 오버레이 (파란 점선 박스)
+  // Hover overlay (blue dashed box)
   var ov = document.createElement('div');
   Object.assign(ov.style, {
     position: 'fixed', pointerEvents: 'none', zIndex: '2147483647',
@@ -54,7 +54,7 @@ javascript:(function () {
   });
   document.body.appendChild(ov);
 
-  // ID 표시 툴팁
+  // ID tooltip
   var tip = document.createElement('div');
   Object.assign(tip.style, {
     position: 'fixed', zIndex: '2147483647',
@@ -68,7 +68,7 @@ javascript:(function () {
 
   var cur = null;
 
-  // 가장 가까운 data-testid 부모를 찾는다
+  // Walk up to the closest ancestor with data-testid
   function findTid(el) {
     while (el && el !== document.documentElement) {
       if (el.getAttribute && el.getAttribute('data-testid')) return el;
@@ -77,7 +77,7 @@ javascript:(function () {
     return null;
   }
 
-  // 마우스 이동 → 오버레이/툴팁 위치 갱신
+  // Mouse move → reposition overlay & tooltip
   function onMove(e) {
     cur = findTid(e.target) || e.target;
     var r = cur.getBoundingClientRect();
@@ -99,7 +99,7 @@ javascript:(function () {
     tip.style.top = ty + 'px';
   }
 
-  // 클립보드 fallback (execCommand)
+  // Clipboard fallback (execCommand)
   function copyText(s) {
     try {
       var ta = document.createElement('textarea');
@@ -114,7 +114,7 @@ javascript:(function () {
     } catch (e) { return false; }
   }
 
-  // 클릭 → testid 복사 → 종료
+  // Click → copy testid → stop
   function onClick(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -142,10 +142,10 @@ javascript:(function () {
     }
   }
 
-  // ESC → 종료
+  // ESC → stop
   function onKey(e) { if (e.key === 'Escape') window.__tidStop(); }
 
-  // 토스트
+  // Toast
   function showToast(msg) {
     var toast = document.createElement('div');
     toast.textContent = msg;
@@ -162,7 +162,7 @@ javascript:(function () {
     setTimeout(function () { toast.remove(); }, 4000);
   }
 
-  // 종료 함수 (전역 노출 → 재실행 시 토글)
+  // Stop function (exposed globally so re-invocation toggles off)
   window.__tidStop = function () {
     document.removeEventListener('mouseover', onMove, true);
     document.removeEventListener('click', onClick, true);
