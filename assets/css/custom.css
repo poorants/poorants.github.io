@@ -1,0 +1,179 @@
+/* =============================================================
+ * GitHub 컬러 테마 (Obsidian theme github 포트)
+ * 출처: https://github.com/krios2146/obsidian-theme-github
+ * 적용 대상: Hextra (Tailwind v4)
+ * ============================================================= */
+
+/* ----- GitHub 컬러 토큰 정의 ----- */
+:root {
+  /* Light (GitHub Light) */
+  --gh-canvas:        #ffffff;  /* primary bg */
+  --gh-subtle:        #f6f8fa;  /* secondary bg (sidebar, codeblock outer) */
+  --gh-muted:         #afb8c133;
+  --gh-border:        #d0d7de;
+  --gh-border-muted:  #d8dee4;
+  --gh-fg:            #24292f;
+  --gh-fg-muted:      #57606a;
+  --gh-fg-subtle:     #6e7781;
+  --gh-accent:        #0969da;  /* link blue */
+  --gh-accent-emph:   #0550ae;
+  --gh-success:       #1a7f37;
+  --gh-danger:        #cf222e;
+  --gh-code-bg:       #afb8c133;
+
+  /* Hextra primary → GitHub blue (light/dark 공통 hue) */
+  --primary-hue: 212deg;
+  --primary-saturation: 100%;
+  --primary-lightness: 45%;
+}
+
+.dark {
+  /* Dark (GitHub Dark — Obsidian theme color-base-*) */
+  --gh-canvas:        #0d1117;
+  --gh-subtle:        #161b22;
+  --gh-muted:         #6e768166;
+  --gh-border:        #30363d;
+  --gh-border-muted:  #21262d;
+  --gh-fg:            #c9d1d9;
+  --gh-fg-muted:      #8b949e;
+  --gh-fg-subtle:     #6e7681;
+  --gh-accent:        #58a6ff;
+  --gh-accent-emph:   #79c0ff;
+  --gh-success:       #7ee787;
+  --gh-danger:        #f47067;
+  --gh-code-bg:       #6e768166;
+
+  --primary-lightness: 67%;
+}
+
+/* ----- Hextra dark 배경 토큰 override ----- */
+@layer theme {
+  :root {
+    --color-dark: #0d1117;  /* hx:dark:bg-dark → GitHub canvas-default */
+  }
+}
+
+/* ----- 본문/배경 ----- */
+body {
+  color: var(--gh-fg);
+  background-color: var(--gh-canvas);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    "Apple SD Gothic Neo", "Pretendard", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.dark body {
+  color: var(--gh-fg);
+  background-color: var(--gh-canvas);
+}
+
+/* ----- 헤더 (네브바) ----- */
+.hextra-nav-container-blur {
+  background-color: var(--gh-canvas) !important;
+  box-shadow: 0 1px 0 var(--gh-border) !important;
+}
+.dark .hextra-nav-container-blur {
+  background-color: var(--gh-canvas) !important;
+  box-shadow: 0 1px 0 var(--gh-border) !important;
+}
+
+/* ----- 사이드바 ----- */
+aside.hextra-sidebar-container {
+  background-color: var(--gh-canvas);
+}
+.dark aside.hextra-sidebar-container {
+  background-color: var(--gh-canvas);
+}
+
+/* ----- 풋터 ----- */
+.hextra-footer {
+  background-color: var(--gh-subtle) !important;
+  border-top: 1px solid var(--gh-border);
+}
+
+/* ----- 링크 ----- */
+.content a {
+  color: var(--gh-accent);
+  text-decoration: none;
+}
+.content a:hover {
+  text-decoration: underline;
+}
+
+/* ----- 헤딩: GitHub처럼 H1/H2 아래 밑줄 ----- */
+.content h1 {
+  border-bottom: 1px solid var(--gh-border-muted);
+  padding-bottom: 0.3em;
+  margin-bottom: 1em;
+}
+.content h2 {
+  border-bottom: 1px solid var(--gh-border-muted);
+  padding-bottom: 0.3em;
+}
+
+/* ----- 인라인 코드 ----- */
+.content code:not(pre code) {
+  background-color: var(--gh-code-bg);
+  color: var(--gh-fg);
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-size: 85%;
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+    "JetBrains Mono", "D2Coding", monospace;
+}
+
+/* ----- 코드 블록 ----- */
+.content pre {
+  background-color: var(--gh-subtle) !important;
+  border: 1px solid var(--gh-border-muted);
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+    "JetBrains Mono", "D2Coding", monospace;
+}
+
+/* ----- 인용구 ----- */
+.content blockquote {
+  border-left: 0.25em solid var(--gh-border);
+  padding: 0 1em;
+  color: var(--gh-fg-muted);
+}
+
+/* ----- 테이블 ----- */
+.content table {
+  border-collapse: collapse;
+}
+.content table th,
+.content table td {
+  border: 1px solid var(--gh-border);
+  padding: 6px 13px;
+}
+.content table tr:nth-child(2n) {
+  background-color: var(--gh-subtle);
+}
+
+/* ----- 카드/feature-grid 외곽선·hover ----- */
+.hextra-card,
+.hextra-feature-card {
+  border-color: var(--gh-border) !important;
+}
+.dark .hextra-card,
+.dark .hextra-feature-card {
+  border-color: var(--gh-border) !important;
+}
+
+/* ----- 가로줄 (hr) ----- */
+.content hr {
+  border-top: 1px solid var(--gh-border);
+  margin: 24px 0;
+}
+
+/* ----- 검색바 ----- */
+.hextra-search-input-wrapper {
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-subtle);
+}
