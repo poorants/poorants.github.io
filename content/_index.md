@@ -1,15 +1,11 @@
 ---
-title: "poorants — dev log"
+title: "인생은 펠리컨처럼!"
 toc: false
 ---
 
-사이드 프로젝트와 그 과정의 개발 기록을 남기는 곳.
+개발하면서 떠오른 생각, 새로 알게 된 기술, 요즘 보고 있는 트렌드, 그리고 IT 바깥의 사적인 이야기까지 — 떠오르는 대로 적어두는 곳.
 
 {{< cards >}}
-  {{< card link="/blog" title="블로그" subtitle="개발 과정과 트러블슈팅 기록" >}}
-  {{< card link="/about" title="소개" subtitle="이 블로그와 운영자에 대해" >}}
+  {{< card link="/blog" title="글 목록" subtitle="떠오르는 대로, 다듬어지는 대로" >}}
+  {{< card link="/about" title="소개" subtitle="이 블로그와 펠리컨에 대해" >}}
 {{< /cards >}}
-
-## 최근 글
-
-자세한 글 목록은 [블로그](/blog)에서 확인.
