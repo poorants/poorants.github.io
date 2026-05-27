@@ -36,8 +36,150 @@ testid 를 할당하는 것 자체는 좋다. 다만 컴포넌트가 늘어나�
 화면을 보면서 컴포넌트에 마우스를 올리면 testid 가 표시되고, 클릭하면 `data-testid="..."` 가 클립보드에 복사된다. 종료는 ESC.
 
 ```javascript
-javascript:(function(){if(window.__tidActive&&window.__tidStop){window.__tidStop();return}window.__tidActive=true;var ov=document.createElement('div');Object.assign(ov.style,{position:'fixed',pointerEvents:'none',zIndex:'2147483647',border:'2px dashed #1a73e8',background:'rgba(26,115,232,0.15)',boxSizing:'border-box',transition:'all 0.05s ease'});document.body.appendChild(ov);var tip=document.createElement('div');Object.assign(tip.style,{position:'fixed',zIndex:'2147483647',background:'#1a1a2e',color:'#fff',padding:'4px 8px',borderRadius:'4px',fontSize:'11px',fontFamily:'monospace',pointerEvents:'none',whiteSpace:'nowrap',boxShadow:'0 4px 12px rgba(0,0,0,0.5)'});document.body.appendChild(tip);var cur=null;function findTid(el){while(el&&el!==document.documentElement){if(el.getAttribute&&el.getAttribute('data-testid'))return el;el=el.parentElement}return null}function onMove(e){var el=e.target,found=findTid(el);cur=found||el;var r=cur.getBoundingClientRect();ov.style.top=r.top+'px';ov.style.left=r.left+'px';ov.style.width=r.width+'px';ov.style.height=r.height+'px';var tid=cur.getAttribute('data-testid');tip.textContent=tid?'ID: '+tid:'(data-testid 없음)';tip.style.background=tid?'#1a73e8':'#444';var tx=r.left,ty=r.top-24;if(ty<5)ty=r.bottom+5;if(tx+tip.offsetWidth>window.innerWidth)tx=window.innerWidth-tip.offsetWidth-5;tip.style.left=tx+'px';tip.style.top=ty+'px'}function copyText(s){try{var ta=document.createElement('textarea');ta.value=s;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();var ok=document.execCommand('copy');document.body.removeChild(ta);return ok}catch(e){return false}}function onClick(e){e.preventDefault();e.stopPropagation();var tid=cur&&cur.getAttribute('data-testid');var stopNow=function(){try{window.__tidStop&&window.__tidStop()}catch(e){}};if(!tid){showToast('❌ data-testid 없음');stopNow();return}var s='data-testid="'+tid+'"';var done=function(ok){showToast((ok?'✓ 복사됨: ':'⚠ 복사실패(수동복사): ')+s);stopNow()};if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(s).then(function(){done(true)},function(){done(copyText(s))})}else{done(copyText(s))}}function onKey(e){if(e.key==='Escape')window.__tidStop()}function showToast(msg){var toast=document.createElement('div');toast.textContent=msg;Object.assign(toast.style,{position:'fixed',bottom:'20px',left:'50%',transform:'translateX(-50%)',background:'#059669',color:'#fff',padding:'10px 20px',borderRadius:'8px',fontSize:'13px',fontFamily:'monospace',zIndex:'2147483647',pointerEvents:'auto',userSelect:'text',maxWidth:'80vw',wordBreak:'break-all'});document.body.appendChild(toast);setTimeout(function(){toast.remove()},4000)}window.__tidStop=function(){document.removeEventListener('mouseover',onMove,true);document.removeEventListener('click',onClick,true);document.removeEventListener('keydown',onKey,true);ov.remove();tip.remove();window.__tidActive=false;window.__tidStop=null};document.addEventListener('mouseover',onMove,true);document.addEventListener('click',onClick,true);document.addEventListener('keydown',onKey,true);showToast('🚀 TestID Picker ON')})();
+javascript:(function () {
+  // 이미 켜져 있으면 토글로 종료
+  if (window.__tidActive && window.__tidStop) {
+    window.__tidStop();
+    return;
+  }
+  window.__tidActive = true;
+
+  // 호버 오버레이 (파란 점선 박스)
+  var ov = document.createElement('div');
+  Object.assign(ov.style, {
+    position: 'fixed', pointerEvents: 'none', zIndex: '2147483647',
+    border: '2px dashed #1a73e8',
+    background: 'rgba(26,115,232,0.15)',
+    boxSizing: 'border-box', transition: 'all 0.05s ease'
+  });
+  document.body.appendChild(ov);
+
+  // ID 표시 툴팁
+  var tip = document.createElement('div');
+  Object.assign(tip.style, {
+    position: 'fixed', zIndex: '2147483647',
+    background: '#1a1a2e', color: '#fff',
+    padding: '4px 8px', borderRadius: '4px',
+    fontSize: '11px', fontFamily: 'monospace',
+    pointerEvents: 'none', whiteSpace: 'nowrap',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.5)'
+  });
+  document.body.appendChild(tip);
+
+  var cur = null;
+
+  // 가장 가까운 data-testid 부모를 찾는다
+  function findTid(el) {
+    while (el && el !== document.documentElement) {
+      if (el.getAttribute && el.getAttribute('data-testid')) return el;
+      el = el.parentElement;
+    }
+    return null;
+  }
+
+  // 마우스 이동 → 오버레이/툴팁 위치 갱신
+  function onMove(e) {
+    cur = findTid(e.target) || e.target;
+    var r = cur.getBoundingClientRect();
+    Object.assign(ov.style, {
+      top: r.top + 'px', left: r.left + 'px',
+      width: r.width + 'px', height: r.height + 'px'
+    });
+
+    var tid = cur.getAttribute('data-testid');
+    tip.textContent = tid ? 'ID: ' + tid : '(data-testid 없음)';
+    tip.style.background = tid ? '#1a73e8' : '#444';
+
+    var tx = r.left, ty = r.top - 24;
+    if (ty < 5) ty = r.bottom + 5;
+    if (tx + tip.offsetWidth > window.innerWidth) {
+      tx = window.innerWidth - tip.offsetWidth - 5;
+    }
+    tip.style.left = tx + 'px';
+    tip.style.top = ty + 'px';
+  }
+
+  // 클립보드 fallback (execCommand)
+  function copyText(s) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = s;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
+  }
+
+  // 클릭 → testid 복사 → 종료
+  function onClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var tid = cur && cur.getAttribute('data-testid');
+    var stopNow = function () {
+      try { window.__tidStop && window.__tidStop(); } catch (e) {}
+    };
+    if (!tid) {
+      showToast('❌ data-testid 없음');
+      stopNow();
+      return;
+    }
+    var s = 'data-testid="' + tid + '"';
+    var done = function (ok) {
+      showToast((ok ? '✓ 복사됨: ' : '⚠ 복사실패(수동복사): ') + s);
+      stopNow();
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(s).then(
+        function () { done(true); },
+        function () { done(copyText(s)); }
+      );
+    } else {
+      done(copyText(s));
+    }
+  }
+
+  // ESC → 종료
+  function onKey(e) { if (e.key === 'Escape') window.__tidStop(); }
+
+  // 토스트
+  function showToast(msg) {
+    var toast = document.createElement('div');
+    toast.textContent = msg;
+    Object.assign(toast.style, {
+      position: 'fixed', bottom: '20px', left: '50%',
+      transform: 'translateX(-50%)',
+      background: '#059669', color: '#fff',
+      padding: '10px 20px', borderRadius: '8px',
+      fontSize: '13px', fontFamily: 'monospace',
+      zIndex: '2147483647', pointerEvents: 'auto',
+      userSelect: 'text', maxWidth: '80vw', wordBreak: 'break-all'
+    });
+    document.body.appendChild(toast);
+    setTimeout(function () { toast.remove(); }, 4000);
+  }
+
+  // 종료 함수 (전역 노출 → 재실행 시 토글)
+  window.__tidStop = function () {
+    document.removeEventListener('mouseover', onMove, true);
+    document.removeEventListener('click', onClick, true);
+    document.removeEventListener('keydown', onKey, true);
+    ov.remove(); tip.remove();
+    window.__tidActive = false;
+    window.__tidStop = null;
+  };
+
+  document.addEventListener('mouseover', onMove, true);
+  document.addEventListener('click', onClick, true);
+  document.addEventListener('keydown', onKey, true);
+  showToast('🚀 TestID Picker ON');
+})();
 ```
+
+코드 전체를 그대로 북마크 URL 칸에 붙여 넣으면 된다. 모던 브라우저는 `javascript:` URL 내부의 공백과 줄바꿈을 무시하므로, 정돈된 형태로 두어도 동작에는 영향이 없다.
 
 설치는 단순하다. 브라우저에서 새 북마크를 만들고, URL 칸에 위 코드를 통째로(앞의 `javascript:` 포함) 붙여 넣은 뒤, 이름을 "TestID Picker" 정도로 지정한다.
 
