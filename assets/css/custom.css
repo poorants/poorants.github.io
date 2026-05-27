@@ -104,12 +104,27 @@ aside.hextra-sidebar-container {
   text-decoration: underline;
 }
 
-/* ----- 헤딩: H1/H2 구분선 (사용자 지정) ----- */
+/* ----- 헤딩: 크기 (GitHub 마크다운 기본값) + H1/H2 구분선 ----- */
+.content h1 { font-size: 2em;     font-weight: 600; line-height: 1.25; }
+.content h2 { font-size: 1.5em;   font-weight: 600; line-height: 1.25; }
+.content h3 { font-size: 1.25em;  font-weight: 600; line-height: 1.25; }
+.content h4 { font-size: 1em;     font-weight: 600; line-height: 1.25; }
+.content h5 { font-size: 0.875em; font-weight: 600; line-height: 1.25; }
+.content h6 { font-size: 0.85em;  font-weight: 600; line-height: 1.25; color: var(--gh-fg-muted); }
+
 .content h1,
 .content h2 {
   padding-top: 1.5em;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.3em;
   border-bottom: 1px solid #ebebeb;
+  margin-bottom: 16px;
+}
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  margin-top: 1.5em;
+  margin-bottom: 16px;
 }
 .dark .content h1,
 .dark .content h2 {
