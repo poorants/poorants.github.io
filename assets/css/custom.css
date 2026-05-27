@@ -4,7 +4,7 @@
  * 적용 대상: Hextra (Tailwind v4)
  * ============================================================= */
 
-/* ----- 웹폰트 fallback (Powerline 패치 폰트 미설치 방문자용) ----- */
+/* ----- 웹폰트 (Google Fonts, 모든 방문자 동일) ----- */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&display=swap");
 
 /* ----- GitHub 컬러 토큰 정의 ----- */
@@ -61,8 +61,7 @@ body {
   color: var(--gh-fg);
   background-color: var(--gh-canvas);
   font-family:
-    "Noto Mono for Powerline",  /* 로컬에 설치돼 있으면 우선 */
-    "Noto Sans Mono",            /* Google Fonts fallback */
+    "Noto Sans Mono",
     "Apple SD Gothic Neo", "Pretendard",
     ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -125,10 +124,8 @@ aside.hextra-sidebar-container {
   border-radius: 6px;
   font-size: 85%;
   font-family:
-    "Source Code Pro for Powerline",  /* 로컬 우선 */
-    "Source Code Pro",                  /* Google Fonts fallback */
-    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-    "JetBrains Mono", "D2Coding", monospace;
+    "Source Code Pro",
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 /* ----- 코드 블록 ----- */
@@ -139,10 +136,8 @@ aside.hextra-sidebar-container {
   padding: 16px;
   overflow: auto;
   font-family:
-    "Source Code Pro for Powerline",  /* 로컬 우선 */
-    "Source Code Pro",                  /* Google Fonts fallback */
-    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-    "JetBrains Mono", "D2Coding", monospace;
+    "Source Code Pro",
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 /* ----- 인용구 ----- */
