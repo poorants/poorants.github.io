@@ -1,8 +1,11 @@
 /* =============================================================
- * GitHub 컬러 테마 (Obsidian theme github 포트)
+ * GitHub 컬러 테마 (Obsidian theme github 포트) + Powerline 폰트
  * 출처: https://github.com/krios2146/obsidian-theme-github
  * 적용 대상: Hextra (Tailwind v4)
  * ============================================================= */
+
+/* ----- 웹폰트 fallback (Powerline 패치 폰트 미설치 방문자용) ----- */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&display=swap");
 
 /* ----- GitHub 컬러 토큰 정의 ----- */
 :root {
@@ -53,14 +56,15 @@
   }
 }
 
-/* ----- 본문/배경 ----- */
+/* ----- 본문/배경 (전역 폰트: Noto Mono for Powerline) ----- */
 body {
   color: var(--gh-fg);
   background-color: var(--gh-canvas);
   font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
-    "Apple SD Gothic Neo", "Pretendard", Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji";
+    "Noto Mono for Powerline",  /* 로컬에 설치돼 있으면 우선 */
+    "Noto Sans Mono",            /* Google Fonts fallback */
+    "Apple SD Gothic Neo", "Pretendard",
+    ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .dark body {
@@ -101,15 +105,16 @@ aside.hextra-sidebar-container {
   text-decoration: underline;
 }
 
-/* ----- 헤딩: GitHub처럼 H1/H2 아래 밑줄 ----- */
-.content h1 {
-  border-bottom: 1px solid var(--gh-border-muted);
-  padding-bottom: 0.3em;
-  margin-bottom: 1em;
-}
+/* ----- 헤딩: H1/H2 구분선 (사용자 지정) ----- */
+.content h1,
 .content h2 {
-  border-bottom: 1px solid var(--gh-border-muted);
-  padding-bottom: 0.3em;
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ebebeb;
+}
+.dark .content h1,
+.dark .content h2 {
+  border-bottom-color: var(--gh-border-muted);
 }
 
 /* ----- 인라인 코드 ----- */
@@ -120,6 +125,8 @@ aside.hextra-sidebar-container {
   border-radius: 6px;
   font-size: 85%;
   font-family:
+    "Source Code Pro for Powerline",  /* 로컬 우선 */
+    "Source Code Pro",                  /* Google Fonts fallback */
     "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
     "JetBrains Mono", "D2Coding", monospace;
 }
@@ -132,6 +139,8 @@ aside.hextra-sidebar-container {
   padding: 16px;
   overflow: auto;
   font-family:
+    "Source Code Pro for Powerline",  /* 로컬 우선 */
+    "Source Code Pro",                  /* Google Fonts fallback */
     "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
     "JetBrains Mono", "D2Coding", monospace;
 }
