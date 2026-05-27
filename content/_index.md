@@ -1,17 +1,31 @@
 ---
 title: "인생은 펠리컨처럼!"
-toc: false
 layout: hextra-home
 ---
 
-{{< hero
-  headline="인생은 펠리컨처럼!"
-  subtitle="개발하면서 떠오른 생각, 새로 알게 된 기술, 요즘 보고 있는 트렌드, 그리고 IT 바깥의 사적인 이야기까지 — 떠오르는 대로 적어두는 곳."
-  button1="글 보러 가기"
-  button1Link="/blog"
-  button2="GitHub"
-  button2Link="https://github.com/poorants"
->}}
+{{< hextra/hero-badge >}}
+  <div class="hx:w-2 hx:h-2 hx:rounded-full hx:bg-primary-400"></div>
+  <span>장르 가리지 않는 잡식 블로그</span>
+{{< /hextra/hero-badge >}}
+
+<div class="hx:mt-6 hx:mb-6">
+{{< hextra/hero-headline >}}
+  인생은 펠리컨처럼!
+{{< /hextra/hero-headline >}}
+</div>
+
+<div class="hx:mb-12">
+{{< hextra/hero-subtitle >}}
+  떠오르는 생각, 새로 익힌 기술, 요즘 흐름,&nbsp;<br class="hx:sm:block hx:hidden" />
+  그리고 IT 바깥의 일상까지 — 손에 잡히는 대로 담아두는 곳
+{{< /hextra/hero-subtitle >}}
+</div>
+
+<div class="hx:mb-6">
+{{< hextra/hero-button text="글 보러 가기" link="blog" >}}
+</div>
+
+<div class="hx:mt-6"></div>
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
