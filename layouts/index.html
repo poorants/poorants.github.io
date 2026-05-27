@@ -9,6 +9,6 @@
 </head>
 <body>
   <p>블로그로 이동합니다… <a href="{{ "/blog/" | absURL }}">바로가기</a></p>
-  <script>location.replace({{ "/blog/" | absURL | jsonify }});</script>
+  <script>window.location.replace("{{ "/blog/" | absURL }}");</script>
 </body>
 </html>
