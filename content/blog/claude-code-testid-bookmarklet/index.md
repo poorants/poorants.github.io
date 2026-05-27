@@ -41,6 +41,8 @@ javascript:(function(){if(window.__tidActive&&window.__tidStop){window.__tidStop
 
 설치는 단순하다. 브라우저 북마크 새로 만들고, URL 칸에 위 코드를 통째로(앞의 `javascript:` 포함해서) 붙여넣고, 이름은 적당히 "TestID Picker" 정도로.
 
+![브라우저 북마크 추가 화면 — URL 칸에 javascript:(function(){...}) 통째로 붙여넣은 모습](01-bookmark-edit.png)
+
 쓰는 흐름:
 
 1. 작업하려는 페이지 띄워둔 상태에서 그 북마크 클릭
@@ -50,6 +52,8 @@ javascript:(function(){if(window.__tidActive&&window.__tidStop){window.__tidStop
 5. ESC로 종료. 채팅에 붙여넣고 지시
 
 호버할 때 가장 가까운 `data-testid` 가진 부모를 찾아주니까, 안쪽 텍스트나 아이콘을 정확히 안 찍어도 됨.
+
+![북마클릿 동작 — 사이트 로고에 호버하니 파란 점선 박스와 함께 "ID: navbar-logo" 가 표시되는 모습](02-picker-hover.png)
 
 ## 셋업 시 컨벤션 한 줄
 
