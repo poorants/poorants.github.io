@@ -22,7 +22,7 @@ noClasses = false
 
 [[menu.main]]
 identifier = "blog"
-name = "글"
+name = "블로그"
 pageRef = "/blog"
 weight = 1
 

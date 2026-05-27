@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>{{ site.Title }}</title>
+  <link rel="canonical" href="{{ "/blog/" | absURL }}">
+  <meta http-equiv="refresh" content="0; url={{ "/blog/" | absURL }}">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <p>블로그로 이동합니다… <a href="{{ "/blog/" | absURL }}">바로가기</a></p>
+  <script>location.replace({{ "/blog/" | absURL | jsonify }});</script>
+</body>
+</html>
