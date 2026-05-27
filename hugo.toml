@@ -1,0 +1,95 @@
+baseURL = "https://poorants.github.io/"
+languageCode = "ko-kr"
+defaultContentLanguage = "ko"
+title = "poorants — dev log"
+theme = "PaperMod"
+
+enableRobotsTXT = true
+enableEmoji = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[pagination]
+pagerSize = 10
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+env = "production"
+title = "poorants — dev log"
+description = "사이드 프로젝트와 그 과정의 개발 기록"
+DateFormat = "2006-01-02"
+defaultTheme = "auto"
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowWordCount = true
+ShowToc = true
+TocOpen = false
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = false
+
+[params.homeInfoParams]
+Title = "poorants"
+Content = "사이드 프로젝트와 그 과정의 개발 기록"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/poorants"
+
+[params.assets]
+disableHLJS = true
+favicon = "/favicon.ico"
+
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1000
+threshold = 0.4
+minMatchCharLength = 0
+keys = ["title", "permalink", "summary", "content"]
+
+[[menu.main]]
+identifier = "posts"
+name = "글"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "태그"
+url = "/tags/"
+weight = 20
+
+[[menu.main]]
+identifier = "search"
+name = "검색"
+url = "/search/"
+weight = 30
+
+[[menu.main]]
+identifier = "archives"
+name = "보관소"
+url = "/archives/"
+weight = 40
+
+[markup.highlight]
+codeFences = true
+guessSyntax = true
+lineNos = false
+style = "monokai"
+
+[markup.goldmark.renderer]
+unsafe = true

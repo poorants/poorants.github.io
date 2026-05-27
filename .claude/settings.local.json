@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Skill",
+      "Task"
+    ]
+  },
+  "enabledPlugins": {
+    "bkit@bkit-marketplace": true,
+    "example-skills@anthropic-agent-skills": true,
+    "ant-project-kit@ant-agent-skills": true
+  }
+}
