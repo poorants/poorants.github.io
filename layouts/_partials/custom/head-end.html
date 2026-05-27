@@ -1,0 +1,117 @@
+{{/* TestID Picker 연동용: 런타임에 주요 컴포넌트에 data-testid 부여 */}}
+<script>
+(function(){
+  function tagOne(sel, id, root){
+    var el = (root||document).querySelector(sel);
+    if(el && !el.getAttribute('data-testid')) el.setAttribute('data-testid', id);
+    return el;
+  }
+  function tagAll(sel, idFn, root){
+    (root||document).querySelectorAll(sel).forEach(function(el, i){
+      if(el.getAttribute('data-testid')) return;
+      el.setAttribute('data-testid', typeof idFn === 'function' ? idFn(el, i) : (idFn + '-' + i));
+    });
+  }
+  function slug(s){
+    return (s||'').trim().toLowerCase()
+      .replace(/[\s\/]+/g,'-')
+      .replace(/[^a-z0-9가-힣\-]/g,'')
+      .replace(/^-+|-+$/g,'') || 'item';
+  }
+  function apply(){
+    /* 헤더 / 네브바 */
+    tagOne('.hextra-nav-container', 'navbar');
+    var nav = document.querySelector('.hextra-nav-container nav');
+    if(nav){
+      tagOne('a[href="/"]', 'navbar-logo', nav);
+      tagAll('a:not([href="/"])', function(el){
+        var label = el.textContent.trim() || el.getAttribute('title') || '';
+        var href = (el.getAttribute('href')||'').replace(/^\//,'').replace(/\/$/,'');
+        return 'navbar-link-' + (slug(label) || slug(href) || 'unknown');
+      }, nav);
+      tagOne('.hextra-search-trigger', 'navbar-search', nav);
+      tagOne('.hextra-hamburger-menu', 'navbar-hamburger', nav);
+    }
+
+    /* 사이드바 */
+    var aside = tagOne('aside.hextra-sidebar-container', 'sidebar');
+    if(aside){
+      tagAll('.hextra-sidebar-item a', function(el){
+        return 'sidebar-item-' + slug(el.textContent);
+      }, aside);
+      tagOne('.hextra-theme-toggle', 'sidebar-theme-toggle', aside);
+    }
+
+    /* 본문 영역 */
+    tagOne('article main#content', 'main-content');
+    tagOne('nav.hextra-toc', 'toc');
+
+    /* 풋터 */
+    var footer = tagOne('footer.hextra-footer', 'footer');
+    if(footer){
+      tagOne('.hextra-theme-toggle', 'footer-theme-toggle', footer);
+      tagOne('a[href*="hextra"]', 'footer-poweredby', footer);
+    }
+
+    /* 검색 다이얼로그 */
+    tagOne('#hextra-search-dialog', 'search-dialog');
+    tagOne('.hextra-search-input', 'search-input');
+    tagOne('#hextra-search-results', 'search-results');
+
+    /* Hero (랜딩) */
+    tagOne('.hextra-hero-badge', 'hero-badge');
+    tagOne('.hextra-hero-headline, h1.not-prose', 'hero-headline');
+    tagOne('.hextra-hero-subtitle', 'hero-subtitle');
+    tagAll('.hextra-hero-button', function(el, i){
+      return 'hero-button-' + (i + 1);
+    });
+
+    /* Feature grid / Cards */
+    tagOne('.hextra-feature-grid', 'feature-grid');
+    tagAll('.hextra-feature-card', function(el, i){
+      var title = (el.querySelector('h3, .hextra-feature-card-title')||{}).textContent;
+      return 'feature-card-' + (slug(title) || (i + 1));
+    });
+    tagOne('.hextra-cards', 'cards');
+    tagAll('.hextra-card', function(el, i){
+      var title = (el.querySelector('.hextra-card-icon, h3')||{}).textContent;
+      return 'card-' + (slug(title) || (i + 1));
+    });
+
+    /* 블로그 글 목록 (Hextra blog list) */
+    var blogList = document.querySelector('main#content > .hextra-blog, main#content > div.hx\\:mt-8, main#content article ~ article');
+    /* Hextra 블로그 리스트 구조 — 글마다 link 컨테이너 */
+    tagAll('main#content a[href^="/blog/"]', function(el){
+      var titleEl = el.querySelector('h2, h3, .post-title') || el;
+      var t = slug(titleEl.textContent);
+      return 'blog-list-item-' + (t || 'item');
+    });
+
+    /* 단일 포스트 */
+    var mainContent = document.querySelector('main#content');
+    if(mainContent){
+      tagOne('h1', 'post-title', mainContent);
+      tagOne('time', 'post-date', mainContent);
+      tagOne('.content', 'post-content', mainContent);
+      /* 본문 h1~h6 (post-content 내부) */
+      var contentRoot = mainContent.querySelector('.content');
+      if(contentRoot){
+        ['h1','h2','h3','h4','h5','h6'].forEach(function(tag){
+          tagAll(tag, function(el){
+            return 'heading-' + tag + '-' + slug(el.textContent);
+          }, contentRoot);
+        });
+      }
+      /* 이전/다음 글 네비 */
+      tagAll('nav a[rel="prev"], a[rel="prev"]', 'post-nav-prev', mainContent);
+      tagAll('nav a[rel="next"], a[rel="next"]', 'post-nav-next', mainContent);
+    }
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', apply);
+  } else {
+    apply();
+  }
+})();
+</script>
