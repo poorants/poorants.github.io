@@ -9,6 +9,9 @@ enableRobotsTXT = true
 enableGitInfo = true
 enableEmoji = true
 
+[services.googleAnalytics]
+ID = "G-ER2MB6C294"
+
 [outputs]
 home = ["HTML"]
 page = ["HTML"]
