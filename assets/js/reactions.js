@@ -282,11 +282,13 @@ async function ensureGIS() {
 }
 
 async function promptLogin() {
+  if (currentUser) return;
   if (!(await ensureGIS())) { popupLogin(); return; }
   google.accounts.id.prompt((n) => {
     try {
-      const notShown = (n.isNotDisplayed && n.isNotDisplayed()) || (n.isSkippedMoment && n.isSkippedMoment());
-      if (notShown) popupLogin();
+      // One Tap 이 '표시조차 안 될 때'(미지원/쿨다운)만 팝업으로 폴백.
+      // 사용자가 칩을 닫거나 무시한 경우(skip/dismiss)에는 팝업을 띄우지 않는다.
+      if (n.isNotDisplayed && n.isNotDisplayed()) popupLogin();
     } catch (_) { /* noop */ }
   });
 }
