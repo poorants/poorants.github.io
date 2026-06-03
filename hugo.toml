@@ -42,14 +42,6 @@ weight = 3
 [menu.main.params]
 type = "search"
 
-[[menu.main]]
-identifier = "github"
-name = "GitHub"
-weight = 4
-url = "https://github.com/poorants"
-[menu.main.params]
-icon = "github"
-
 [params.navbar]
 displayTitle = true
 displayLogo = false

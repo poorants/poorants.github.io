@@ -118,3 +118,9 @@
   }
 })();
 </script>
+
+{{/* 좋아요·댓글·네브바 로그인 (Firebase) — 모든 페이지 전역 로드 */}}
+{{- $rcss := resources.Get "css/reactions.css" | resources.Minify -}}
+{{- $rjs := resources.Get "js/reactions.js" | resources.Minify -}}
+<link rel="stylesheet" href="{{ $rcss.RelPermalink }}">
+<script type="module" src="{{ $rjs.RelPermalink }}"></script>

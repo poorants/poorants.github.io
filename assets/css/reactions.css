@@ -1,0 +1,147 @@
+/* 좋아요 + 댓글 (Firebase) — 글 하단. 다크/라이트 양쪽 대응(색은 inherit·rgba 기반). */
+
+.reactions {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* 좋아요/싫어요 (미니멀 — 보더·구분선 없이 아이콘 중심, 부드러운 손 아이콘) */
+.reactions-vote-wrap { text-align: center; margin-bottom: 2.5rem; }
+.reactions-vote {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.vote-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.5rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--gh-fg-muted, #888);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.15s, color 0.15s;
+}
+.vote-btn:hover { background: var(--gh-subtle, rgba(128, 128, 128, 0.12)); color: var(--gh-fg, #333); }
+.vote-btn.active { color: var(--gh-accent, #0969da); }
+.vote-icon { width: 20px; height: 20px; display: block; }
+.vote-count { font-variant-numeric: tabular-nums; }
+
+/* 댓글 */
+.reactions-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; }
+.reactions-count { color: #888; font-weight: 500; }
+
+.reactions-auth {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.reactions-username { font-weight: 600; }
+.reactions-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: rgba(128, 128, 128, 0.2);
+}
+
+.reactions-form { margin-bottom: 1.5rem; }
+.reactions-reply-hint { font-size: 0.85rem; color: #e0245e; margin-bottom: 0.4rem; }
+.reactions-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+}
+.reactions-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.reactions-btn {
+  padding: 0.45rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--gh-accent, #0969da);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.reactions-btn:hover { background: var(--gh-accent-emph, #0550ae); }
+.reactions-btn-ghost {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.reactions-list { display: flex; flex-direction: column; gap: 1.2rem; }
+.reactions-comment { display: flex; gap: 0.7rem; }
+.reactions-comment.is-reply { margin-left: 2.5rem; }
+.reactions-body { flex: 1; min-width: 0; }
+.reactions-meta { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.2rem; }
+.reactions-author { font-weight: 600; }
+.reactions-time { font-size: 0.78rem; color: #888; }
+.reactions-text { white-space: pre-wrap; word-break: break-word; line-height: 1.6; }
+.reactions-actions { display: flex; gap: 0.8rem; margin-top: 0.3rem; }
+.reactions-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #888;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.reactions-link:hover { color: var(--gh-accent, #0969da); text-decoration: underline; }
+.reactions-empty { color: #888; }
+
+/* 인라인 답글 입력창 (대상 댓글 바로 아래에 펼쳐짐) */
+.reactions-reply-box { margin: 0.6rem 0 0.2rem 2.5rem; }
+.reactions-reply-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+}
+
+/* 네브바 아바타 (로그인 상태에서만 표시, 드롭다운에서 로그아웃) */
+.navbar-auth { position: relative; display: flex; align-items: center; margin-left: 0.25rem; }
+.navbar-avatar-btn {
+  padding: 0; border: 0; background: none; cursor: pointer; line-height: 0; border-radius: 50%;
+}
+.navbar-avatar {
+  width: 28px; height: 28px; border-radius: 50%; object-fit: cover; display: block;
+  background: rgba(128, 128, 128, 0.2);
+}
+.navbar-menu {
+  position: absolute; top: 130%; right: 0; min-width: 150px;
+  background: #fff; color: #111;
+  border: 1px solid rgba(128, 128, 128, 0.25); border-radius: 10px;
+  padding: 0.5rem; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); z-index: 50;
+}
+html.dark .navbar-menu { background: #1b1b1f; color: #eaeaea; border-color: rgba(255, 255, 255, 0.14); }
+.navbar-name { font-size: 0.85rem; font-weight: 600; padding: 0.2rem 0.4rem 0.5rem; white-space: nowrap; }
+.navbar-logout {
+  width: 100%; text-align: left; padding: 0.4rem; border: 0; border-radius: 6px;
+  background: transparent; color: inherit; cursor: pointer; font-size: 0.85rem;
+}
+.navbar-logout:hover { background: rgba(128, 128, 128, 0.12); }
