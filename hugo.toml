@@ -1,8 +1,8 @@
 baseURL = "https://pelicanlife.dev/"
-title = "인생은 펠리컨처럼!"
 theme = "hextra"
 
 defaultContentLanguage = "ko"
+defaultContentLanguageInSubdir = false
 hasCJKLanguage = true
 
 enableRobotsTXT = true
@@ -23,24 +23,62 @@ unsafe = true
 [markup.highlight]
 noClasses = false
 
-[[menu.main]]
-identifier = "blog"
-name = "블로그"
-pageRef = "/blog"
-weight = 1
+[languages]
+  [languages.ko]
+    label = "한국어"
+    locale = "ko"
+    weight = 1
+    title = "인생은 펠리컨처럼!"
+    [languages.ko.menus]
+      [[languages.ko.menus.main]]
+        identifier = "blog"
+        name = "블로그"
+        pageRef = "/blog"
+        weight = 1
+      [[languages.ko.menus.main]]
+        identifier = "about"
+        name = "소개"
+        pageRef = "/about"
+        weight = 2
+      [[languages.ko.menus.main]]
+        identifier = "search"
+        name = "검색"
+        weight = 3
+        [languages.ko.menus.main.params]
+          type = "search"
+      [[languages.ko.menus.main]]
+        identifier = "lang"
+        weight = 4
+        [languages.ko.menus.main.params]
+          type = "language-switch"
 
-[[menu.main]]
-identifier = "about"
-name = "소개"
-pageRef = "/about"
-weight = 2
-
-[[menu.main]]
-identifier = "search"
-name = "검색"
-weight = 3
-[menu.main.params]
-type = "search"
+  [languages.en]
+    label = "English"
+    locale = "en"
+    weight = 2
+    title = "Live Like a Pelican!"
+    [languages.en.menus]
+      [[languages.en.menus.main]]
+        identifier = "blog"
+        name = "Blog"
+        pageRef = "/blog"
+        weight = 1
+      [[languages.en.menus.main]]
+        identifier = "about"
+        name = "About"
+        pageRef = "/about"
+        weight = 2
+      [[languages.en.menus.main]]
+        identifier = "search"
+        name = "Search"
+        weight = 3
+        [languages.en.menus.main.params]
+          type = "search"
+      [[languages.en.menus.main]]
+        identifier = "lang"
+        weight = 4
+        [languages.en.menus.main.params]
+          type = "language-switch"
 
 [params.navbar]
 displayTitle = true

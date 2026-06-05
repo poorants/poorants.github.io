@@ -1,15 +1,20 @@
+{{- $dest := "blog/" | absLangURL -}}
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="{{ site.Language.Lang }}">
 <head>
   <meta charset="utf-8">
   <title>{{ site.Title }}</title>
-  <link rel="canonical" href="{{ "/blog/" | absURL }}">
-  <meta http-equiv="refresh" content="0; url={{ "/blog/" | absURL }}">
+  <link rel="canonical" href="{{ $dest }}">
+  <meta http-equiv="refresh" content="0; url={{ $dest }}">
   <meta name="robots" content="noindex">
   <meta name="naver-site-verification" content="afd6d5500a329e78856dc180c2bf2d7b1eebf4ea" />
 </head>
 <body>
-  <p>블로그로 이동합니다… <a href="{{ "/blog/" | absURL }}">바로가기</a></p>
-  <script>window.location.replace("{{ "/blog/" | absURL }}");</script>
+  {{- if eq site.Language.Lang "en" }}
+  <p>Redirecting to the blog… <a href="{{ $dest }}">Go now</a></p>
+  {{- else }}
+  <p>블로그로 이동합니다… <a href="{{ $dest }}">바로가기</a></p>
+  {{- end }}
+  <script>window.location.replace("{{ $dest }}");</script>
 </body>
 </html>
