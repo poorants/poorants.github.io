@@ -23,9 +23,17 @@ This file server MCP got reused in a way I hadn't planned for. Later, when I was
 
 Once a deploy finishes, the issues I fixed this round need the handling notes and the deploy path written back to them. Do it by hand and you'll always miss one or two. So at the moment the deploy completes, each fixed issue gets its handling items and deploy path posted as a comment automatically.
 
+What I liked here is that I don't have to author the comment's raw material separately. As I work, I split the process into fine-grained git commits, so what changed and how is already spelled out in the commit log in detail. There's no need to summarize the work by hand — the MCP just pulls it from the commit log and rephrases it in terms that fit the issue.
+
+And this turned into an unplanned payoff. The same MCP that pulls work history out of commits, I later reused as-is for writing sprint reports and weekly reports. What I did over a week is already recorded in the commits, so the report grows from the same source. One connection, built once, ended up taking a bite out of reporting work too.
+
 ## Docs Go to the Wiki
 
 A fix doesn't end at the code. It has to live on as a dev note so the next person finds it. So I built a wiki MCP too, and had it push the dev note for each change straight to the internal wiki.
+
+Any developer knows this stall: the code keeps changing, and the docs can't keep pace. Every time you touch a feature, updating the manual, leaving a dev note, writing the release note — all of it gets pushed to later. That gap, where code and docs drift apart, is a pain developers carry for a long time.
+
+After wiring in the wiki MCP, that pain mostly went away. What I just fixed is already in the commits and the handling record, so the cost of shaping it into a manual, a dev note, or a release note and posting it to the wiki collapsed to nearly zero. It stopped being a matter of writing docs from scratch and became one of exporting work I'd already done, once more. Development and documentation no longer run on separate tracks — they line up into one.
 
 ## One Module, Three Services Run Separately
 
