@@ -4,6 +4,7 @@ theme = "hextra"
 defaultContentLanguage = "ko"
 defaultContentLanguageInSubdir = false
 hasCJKLanguage = true
+timeZone = "Asia/Seoul"
 
 enableRobotsTXT = true
 enableGitInfo = true
