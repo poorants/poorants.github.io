@@ -26,6 +26,7 @@ noClasses = false
 
 [languages]
   [languages.ko]
+    languageName = "한국어"
     label = "한국어"
     locale = "ko"
     weight = 1
@@ -54,6 +55,7 @@ noClasses = false
           type = "language-switch"
 
   [languages.en]
+    languageName = "English"
     label = "English"
     locale = "en"
     weight = 2
