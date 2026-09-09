@@ -11,7 +11,7 @@ enableGitInfo = true
 enableEmoji = true
 
 [services.googleAnalytics]
-ID = "G-ER2MB6C294"
+ID = "G-CX6FM0PQGM"
 
 [outputs]
 home = ["HTML"]
