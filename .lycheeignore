@@ -1,0 +1,8 @@
+# URL regexes skipped by the external link check (.github/workflows/links.yml).
+# Sites that reject CI clients or need a login:
+linkedin\.com
+# Preconnect / analytics endpoints, not real links:
+^https://(www\.)?googletagmanager\.com
+^https://fonts\.(googleapis|gstatic)\.com
+# XML namespaces:
+^https?://www\.w3\.org/

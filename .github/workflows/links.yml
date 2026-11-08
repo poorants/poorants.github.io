@@ -1,0 +1,97 @@
+name: Link check
+
+# Internal links (pages, assets, #fragments) are checked offline against the built site and
+# block the PR. External links are checked separately; failures are reported in the job summary
+# but never block, because third-party sites flake (rate limits, bot walls, TLS hiccups).
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 21 * * 0" # weekly, Monday 06:17 KST, to catch link rot between posts
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: links-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.150.0
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: hugo --gc --minify
+
+      # Absolute links to the site itself (canonical, og:url, hreflang, ...) are remapped
+      # onto public/ so they are checked as internal files too.
+      - name: Check internal links (blocking)
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: >-
+            --offline
+            --no-progress
+            --include-fragments
+            --index-files index.html
+            --root-dir '${{ github.workspace }}/public'
+            --remap '^https://pelicanlife\.dev/(.*)$ file://${{ github.workspace }}/public/$1'
+            public
+          output: lychee/internal.md
+          fail: true
+
+      - name: Restore lychee cache
+        if: ${{ !cancelled() }}
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .lycheecache
+          key: lychee-${{ github.sha }}
+          restore-keys: lychee-
+
+      # Hosts that are known to block CI or flake live in .lycheeignore.
+      - name: Check external links (non-blocking)
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: >-
+            --no-progress
+            --cache
+            --max-cache-age 3d
+            --cache-exclude-status '400..=599'
+            --scheme https
+            --scheme http
+            --exclude '^https?://pelicanlife\.dev'
+            --exclude-path 'public/(en/)?(tags|categories)/'
+            --accept '100..=103,200..=299,403,429'
+            --max-retries 2
+            --retry-wait-time 5
+            --timeout 20
+            --max-concurrency 16
+            --root-dir '${{ github.workspace }}/public'
+            public
+          output: lychee/external.md
+          fail: true
+          token: ${{ secrets.GITHUB_TOKEN }}
