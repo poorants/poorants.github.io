@@ -1,0 +1,6 @@
+      2 sanity
+      1 secp256r1mlkem768: basic connection with HRR
+    117 secp256r1mlkem768: malformed pqc part, variable N
+    157 secp384r1mlkem1024: malformed pqc part, variable N
+      1 x25519mlkem768: basic connection
+    124 x25519mlkem768: malformed pqc part, variable N

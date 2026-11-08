@@ -1,0 +1,20 @@
+# OpenSSL 3.2.x (Fedora 40) + liboqs + oqs-provider, pinned releases
+# (Fedora 40's own oqsprovider package is 0.5.3, too old for the final ML-KEM/ML-DSA names)
+FROM fedora:40
+ARG LIBOQS_TAG=0.16.0
+ARG OQSPROV_TAG=0.12.0
+RUN dnf -y install openssl openssl-devel gcc gcc-c++ cmake ninja-build git tcpdump ethtool iproute && dnf clean all
+RUN git clone --depth 1 -b ${LIBOQS_TAG} https://github.com/open-quantum-safe/liboqs /build/liboqs \
+ && cmake -S /build/liboqs -B /build/liboqs/b -GNinja -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DBUILD_SHARED_LIBS=ON -DOQS_BUILD_ONLY_LIB=ON -DOQS_DIST_BUILD=ON \
+ && ninja -C /build/liboqs/b install
+RUN git clone --depth 1 -b ${OQSPROV_TAG} https://github.com/open-quantum-safe/oqs-provider /build/oqsprov \
+ && cmake -S /build/oqsprov -B /build/oqsprov/b -GNinja -Dliboqs_DIR=/usr/local/lib64/cmake/liboqs \
+ && ninja -C /build/oqsprov/b \
+ && cp /build/oqsprov/b/lib/oqsprovider.so $(openssl version -m | sed 's/.*"\(.*\)"/\1/')/ \
+ && echo /usr/local/lib64 > /etc/ld.so.conf.d/local.conf && ldconfig && rm -rf /build
+# Fedora's openssl.cnf includes crypto-policies; append oqsprovider activation to a private config
+RUN printf 'openssl_conf = openssl_init\n[openssl_init]\nproviders = provider_sect\n[provider_sect]\ndefault = default_sect\noqsprovider = oqs_sect\n[default_sect]\nactivate = 1\n[oqs_sect]\nactivate = 1\n' > /etc/pki/tls/openssl-oqs.cnf
+ENV OPENSSL_CONF=/etc/pki/tls/openssl-oqs.cnf
+COPY src/hsprobe.c /src/hsprobe.c
+RUN gcc -O2 -o /usr/local/bin/hsprobe /src/hsprobe.c -lssl -lcrypto

@@ -1,0 +1,22 @@
+# OpenSSL 3.0.x (Ubuntu 22.04) + liboqs + oqs-provider, pinned releases
+FROM ubuntu:22.04
+ARG LIBOQS_TAG=0.16.0
+ARG OQSPROV_TAG=0.12.0
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      openssl libssl-dev gcc g++ libc6-dev cmake ninja-build git ca-certificates \
+      tcpdump ethtool iproute2 \
+ && rm -rf /var/lib/apt/lists/*
+RUN git clone --depth 1 -b ${LIBOQS_TAG} https://github.com/open-quantum-safe/liboqs /build/liboqs \
+ && cmake -S /build/liboqs -B /build/liboqs/b -GNinja -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DBUILD_SHARED_LIBS=ON -DOQS_BUILD_ONLY_LIB=ON -DOQS_DIST_BUILD=ON \
+ && ninja -C /build/liboqs/b install
+RUN git clone --depth 1 -b ${OQSPROV_TAG} https://github.com/open-quantum-safe/oqs-provider /build/oqsprov \
+ && cmake -S /build/oqsprov -B /build/oqsprov/b -GNinja -Dliboqs_DIR=/usr/local/lib/cmake/liboqs \
+ && ninja -C /build/oqsprov/b \
+ && cp /build/oqsprov/b/lib/oqsprovider.so $(openssl version -m | sed 's/.*"\(.*\)"/\1/')/ \
+ && ldconfig && rm -rf /build
+# Load default + oqsprovider for every openssl invocation in this image
+RUN printf 'openssl_conf = openssl_init\n[openssl_init]\nproviders = provider_sect\n[provider_sect]\ndefault = default_sect\noqsprovider = oqs_sect\n[default_sect]\nactivate = 1\n[oqs_sect]\nactivate = 1\n' > /etc/ssl/openssl-oqs.cnf
+ENV OPENSSL_CONF=/etc/ssl/openssl-oqs.cnf
+COPY src/hsprobe.c /src/hsprobe.c
+RUN gcc -O2 -o /usr/local/bin/hsprobe /src/hsprobe.c -lssl -lcrypto

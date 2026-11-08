@@ -1,0 +1,23 @@
+## OpenSSL 3.5 verifying oqs-provider ML-DSA-65 chain
+/certs/mldsa65-oqs/leaf.pem: OK
+## oqs-provider (on 3.0) verifying OpenSSL 3.5 ML-DSA-65 chain
+/certs/mldsa65/leaf.pem: OK
+## OpenSSL 3.0 (no provider) parsing an ML-DSA-65 certificate
+        Signature Algorithm: 2.16.840.1.101.3.4.3.18
+            Public Key Algorithm: 2.16.840.1.101.3.4.3.18
+4007F7F643740000:error:03000072:digital envelope routines:X509_PUBKEY_get0:decode error:../crypto/x509/x_pubkey.c:458:
+4007F7F643740000:error:03000072:digital envelope routines:X509_PUBKEY_get0:decode error:../crypto/x509/x_pubkey.c:458:
+## OpenSSL 3.5 parsing oqs p384_mldsa65 hybrid certificate
+        Signature Algorithm: 1.3.9999.7.7
+            Public Key Algorithm: 1.3.9999.7.7
+805747741F710000:error:03000072:digital envelope routines:X509_PUBKEY_get0:decode error:../crypto/x509/x_pubkey.c:466:
+805747741F710000:error:03000072:digital envelope routines:X509_PUBKEY_get0:decode error:../crypto/x509/x_pubkey.c:466:
+## OpenSSL 3.0 + oqs-provider: s_server with an ML-DSA-65 certificate (default and SECLEVEL=0)
+error setting certificate
+40C7C16498740000:error:0A00018E:SSL routines:SSL_CTX_use_certificate:ca md too weak:../ssl/ssl_rsa.c:221:
+error setting certificate
+40E7DD4012750000:error:0A0000F7:SSL routines:ssl_set_cert:unknown certificate type:../ssl/ssl_rsa.c:239:
+## OpenSSL 3.2 + oqs-provider: s_server with an ML-DSA-65 certificate
+Using default temp DH parameters
+ACCEPT
+(no output above = loaded and listening until timeout)

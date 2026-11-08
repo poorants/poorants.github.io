@@ -1,0 +1,5 @@
+# OpenSSL 3.2.x as shipped by Fedora 40
+FROM fedora:40
+RUN dnf -y install openssl openssl-devel gcc tcpdump ethtool iproute && dnf clean all
+COPY src/hsprobe.c /src/hsprobe.c
+RUN gcc -O2 -o /usr/local/bin/hsprobe /src/hsprobe.c -lssl -lcrypto

@@ -1,0 +1,7 @@
+# OpenSSL 3.0.x as shipped by Ubuntu 22.04 LTS
+FROM ubuntu:22.04
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      openssl libssl-dev gcc libc6-dev tcpdump ethtool iproute2 ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+COPY src/hsprobe.c /src/hsprobe.c
+RUN gcc -O2 -o /usr/local/bin/hsprobe /src/hsprobe.c -lssl -lcrypto

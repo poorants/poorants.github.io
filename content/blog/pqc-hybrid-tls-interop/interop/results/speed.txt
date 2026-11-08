@@ -1,0 +1,14 @@
+## OpenSSL 3.5 (Debian 13): ECDSA P-256, X25519, ML-KEM-768, ML-DSA-65
+                              sign    verify    sign/s verify/s
+ 256 bits ecdsa (nistp256)   0.0000s   0.0001s  38295.9  12878.0
+                              op      op/s
+ 253 bits ecdh (X25519)   0.0000s  25105.0
+                               keygen    encaps    decaps keygens/s  encaps/s  decaps/s
+                 ML-KEM-768 0.000056s 0.000037s 0.000057s   17811.4   26956.2   17562.2
+                               keygen     signs    verify keygens/s    sign/s  verify/s
+                  ML-DSA-65 0.000230s 0.001201s 0.000238s    4346.3     832.3    4207.7
+## OpenSSL 3.0 (Ubuntu 22.04): ECDSA P-256, X25519
+                              sign    verify    sign/s verify/s
+ 256 bits ecdsa (nistp256)   0.0000s   0.0001s  37664.6  12806.0
+                              op      op/s
+ 253 bits ecdh (X25519)   0.0000s  25145.8

@@ -1,0 +1,8 @@
+ossl30	Ubuntu 22.04.5 LTS	OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)
+ossl32	Fedora Linux 40 (Container Image)	OpenSSL 3.2.4 11 Feb 2025 (Library: OpenSSL 3.2.4 11 Feb 2025)
+ossl35	Debian GNU/Linux 13 (trixie)	OpenSSL 3.5.7 9 Jun 2026 (Library: OpenSSL 3.5.7 9 Jun 2026)
+ossl30-oqs	Ubuntu 22.04.5 LTS	OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)
+ossl32-oqs	Fedora Linux 40 (Container Image)	OpenSSL 3.2.4 11 Feb 2025 (Library: OpenSSL 3.2.4 11 Feb 2025)
+ossl30-oqs	oqsprovider	version: 0.12.0
+ossl32-oqs	oqsprovider	version: 0.12.0
+go	go1.25.14

@@ -1,0 +1,49 @@
+
+
+ Start 2026-11-08 04:55:18        -->> 172.18.0.6:4435 (srv32oqs) <<--
+
+ rDNS (172.18.0.6):      srv32oqs.pqcnet.
+
+ 172.18.0.6:4435 doesn't seem to be a TLS/SSL enabled server
+ Service detected:       Couldn't determine what's running on port 4435, assuming no HTTP service => skipping all HTTP checks
+
+ Testing server's cipher preferences 
+
+Handshake error!Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Cipher Suite Name (IANA/RFC)
+-----------------------------------------------------------------------------------------------------------------------------
+SSLv2
+ - 
+SSLv3
+ - 
+TLSv1
+ - 
+TLSv1.1
+ - 
+TLSv1.2
+ - 
+TLSv1.3
+ - 
+
+ Has server cipher order?     unable to determine
+
+
+ Testing robust forward secrecy (FS) -- omitting Null Authentication/Encryption, 3DES, RC4 
+
+ No ciphers supporting Forward Secrecy (FS) offered
+
+ Testing server defaults (Server Hello) 
+
+ TLS extensions (standard)    (none)
+ Session Ticket RFC 5077 hint no -- no lifetime advertised
+ SSL Session ID support       no
+ Session Resumption           Tickets no, ID: no
+ TLS clock skew               SSLv3 through TLS 1.2 didn't return a timestamp
+ Client Authentication        none
+
+Client problem: No server certificate could be retrieved. Thus we can't continue with "server defaults".
+
+
+
+ Done 2026-11-08 04:55:23 [   7s] -->> 172.18.0.6:4435 (srv32oqs) <<--
+
+

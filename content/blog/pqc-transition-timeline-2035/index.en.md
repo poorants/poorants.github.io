@@ -93,7 +93,7 @@ Once you have read the schedule, the work turns out to start with an inventory r
 
 Place the scattered notices on one line and it becomes clear that 2035 is the end, not the start. Before it, key exchange moves ahead of signatures, and the default that bridges the two is hybrid. The US attached enforcement to its dates, and Europe and the UK fixed their waypoints. Korea set dates for its validation program and a legal basis at the same time.
 
-But "it has become the default" and "it interoperates cleanly" are different statements. Browsers and large CDNs turning on hybrid does not mean the clients and servers of an in-house system run the same library version. How does an older version that does not know the hybrid group handle the larger ClientHello? Does negotiation quietly fall back to the classical scheme, or does it fail? What error does a party that cannot read a hybrid certificate produce? In the next post I cover the results of measuring this directly in an environment with mixed versions.
+But "it has become the default" and "it interoperates cleanly" are different statements. Browsers and large CDNs turning on hybrid does not mean the clients and servers of an in-house system run the same library version. How does an older version that does not know the hybrid group handle the larger ClientHello? Does negotiation quietly fall back to the classical scheme, or does it fail? What error does a party that cannot read a hybrid certificate produce? In [the next post](/en/blog/pqc-hybrid-tls-interop/) I cover the results of measuring this directly in an environment with mixed versions.
 
 ## Sources
 

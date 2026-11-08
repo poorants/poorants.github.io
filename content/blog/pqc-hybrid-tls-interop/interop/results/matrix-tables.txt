@@ -1,0 +1,86 @@
+HOW TO READ THIS FILE
+=====================
+One table per client setting ("client groups"):
+  OpenSSL clients (upper-case names):
+    DEFAULT                 the client's built-in group list
+    X25519MLKEM768          the client offers only the hybrid post-quantum group
+    X25519                  the client offers only classical X25519
+    X25519MLKEM768:X25519   hybrid key share first, X25519 still allowed
+  Go client (lower-case names, row "go"):
+    default / hybrid / x25519   the same idea for Go crypto/tls
+
+Rows    = client (ossl30 = OpenSSL 3.0, ossl32 = 3.2, ossl35 = 3.5,
+          *-oqs = with oqs-provider, go = Go crypto/tls)
+Columns = server: OpenSSL version + certificate
+          (ECDSA, ML-DSA-65, ECDSA+ML-DSA dual certificate,
+           "hybrid-only" = server accepts only X25519MLKEM768,
+           p384_mldsa65 = OQS experimental hybrid signature, not IETF Composite ML-DSA)
+Cells   = what the handshake ended with
+  X25519MLKEM768   connected with hybrid post-quantum key exchange
+  x25519           connected, but classical key exchange only
+  FAIL             handshake failed (usually TLS alert 40, handshake_failure)
+  n/a (...)        the client version cannot even be configured that way
+
+Example: table "DEFAULT", row ossl30, column "3.5 ECDSA" says x25519 --
+an OpenSSL 3.0 client talking to a 3.5 server connects without error but
+stays classical. Column "3.5 ECDSA hybrid-only" says FAIL for the same client.
+
+Per-connection sizes, errors and timings are in matrix.csv and latency.csv.
+
+### client groups = DEFAULT
+
+| client \ server | 3.0 ECDSA | 3.2 ECDSA | 3.2+oqs ECDSA | 3.2+oqs ECDSA hybrid-only | 3.2+oqs ML-DSA-65 | 3.2+oqs p384_mldsa65 | 3.5 ECDSA | 3.5 ECDSA hybrid-only | 3.5 ML-DSA-65 | 3.5 ECDSA+ML-DSA dual | 3.0+oqs ECDSA | 3.0+oqs ECDSA hybrid-only |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ossl30 | x25519 | x25519 | x25519 | FAIL | FAIL | FAIL | x25519 | FAIL | FAIL | x25519 | x25519 | FAIL |
+| ossl32 | x25519 | x25519 | x25519 | FAIL | FAIL | FAIL | x25519 | FAIL | FAIL | x25519 | x25519 | FAIL |
+| ossl35 | x25519 | x25519 | x25519 | X25519MLKEM768 | X25519MLKEM768 | FAIL | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | x25519 | X25519MLKEM768 |
+| ossl30-oqs | x25519 | x25519 | x25519 | FAIL | FAIL | FAIL | x25519 | FAIL | FAIL | x25519 | x25519 | FAIL |
+| ossl32-oqs | x25519 | x25519 | x25519 | FAIL | x25519 | x25519 | x25519 | FAIL | x25519 | x25519 | x25519 | FAIL |
+
+### client groups = X25519MLKEM768
+
+| client \ server | 3.0 ECDSA | 3.2 ECDSA | 3.2+oqs ECDSA | 3.2+oqs ECDSA hybrid-only | 3.2+oqs ML-DSA-65 | 3.2+oqs p384_mldsa65 | 3.5 ECDSA | 3.5 ECDSA hybrid-only | 3.5 ML-DSA-65 | 3.5 ECDSA+ML-DSA dual | 3.0+oqs ECDSA | 3.0+oqs ECDSA hybrid-only |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ossl30 | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) |
+| ossl32 | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) |
+| ossl35 | FAIL | FAIL | FAIL | X25519MLKEM768 | X25519MLKEM768 | FAIL | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | FAIL | X25519MLKEM768 |
+| ossl30-oqs | FAIL | FAIL | FAIL | X25519MLKEM768 | FAIL | FAIL | X25519MLKEM768 | X25519MLKEM768 | FAIL | X25519MLKEM768 | FAIL | X25519MLKEM768 |
+| ossl32-oqs | FAIL | FAIL | FAIL | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | FAIL | X25519MLKEM768 |
+
+### client groups = X25519
+
+| client \ server | 3.0 ECDSA | 3.2 ECDSA | 3.2+oqs ECDSA | 3.2+oqs ECDSA hybrid-only | 3.2+oqs ML-DSA-65 | 3.2+oqs p384_mldsa65 | 3.5 ECDSA | 3.5 ECDSA hybrid-only | 3.5 ML-DSA-65 | 3.5 ECDSA+ML-DSA dual | 3.0+oqs ECDSA | 3.0+oqs ECDSA hybrid-only |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ossl30 | x25519 | x25519 | x25519 | FAIL | FAIL | FAIL | x25519 | FAIL | FAIL | x25519 | x25519 | FAIL |
+| ossl32 | x25519 | x25519 | x25519 | FAIL | FAIL | FAIL | x25519 | FAIL | FAIL | x25519 | x25519 | FAIL |
+| ossl35 | x25519 | x25519 | x25519 | FAIL | x25519 | FAIL | x25519 | FAIL | x25519 | x25519 | x25519 | FAIL |
+| ossl30-oqs | x25519 | x25519 | x25519 | FAIL | FAIL | FAIL | x25519 | FAIL | FAIL | x25519 | x25519 | FAIL |
+| ossl32-oqs | x25519 | x25519 | x25519 | FAIL | x25519 | x25519 | x25519 | FAIL | x25519 | x25519 | x25519 | FAIL |
+
+### client groups = X25519MLKEM768:X25519
+
+| client \ server | 3.0 ECDSA | 3.2 ECDSA | 3.2+oqs ECDSA | 3.2+oqs ECDSA hybrid-only | 3.2+oqs ML-DSA-65 | 3.2+oqs p384_mldsa65 | 3.5 ECDSA | 3.5 ECDSA hybrid-only | 3.5 ML-DSA-65 | 3.5 ECDSA+ML-DSA dual | 3.0+oqs ECDSA | 3.0+oqs ECDSA hybrid-only |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ossl30 | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) |
+| ossl32 | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) | n/a (client cannot configure) |
+| ossl35 | HRR->x25519 | HRR->x25519 | HRR->x25519 | X25519MLKEM768 | X25519MLKEM768 | FAIL | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | HRR->x25519 | X25519MLKEM768 |
+| ossl30-oqs | HRR->x25519 | HRR->x25519 | HRR->x25519 | X25519MLKEM768 | FAIL | FAIL | X25519MLKEM768 | X25519MLKEM768 | FAIL | X25519MLKEM768 | HRR->x25519 | X25519MLKEM768 |
+| ossl32-oqs | HRR->x25519 | HRR->x25519 | HRR->x25519 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | X25519MLKEM768 | HRR->x25519 | X25519MLKEM768 |
+
+### client groups = default
+
+| client \ server | 3.0 ECDSA | 3.2 ECDSA | 3.2+oqs ECDSA | 3.2+oqs ECDSA hybrid-only | 3.2+oqs ML-DSA-65 | 3.2+oqs p384_mldsa65 | 3.5 ECDSA | 3.5 ECDSA hybrid-only | 3.5 ML-DSA-65 | 3.5 ECDSA+ML-DSA dual | 3.0+oqs ECDSA | 3.0+oqs ECDSA hybrid-only |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| go | X25519 | X25519 | X25519 | X25519MLKEM768 | FAIL | FAIL | X25519MLKEM768 | X25519MLKEM768 | FAIL | X25519MLKEM768 | X25519 | X25519MLKEM768 |
+
+### client groups = hybrid
+
+| client \ server | 3.0 ECDSA | 3.2 ECDSA | 3.2+oqs ECDSA | 3.2+oqs ECDSA hybrid-only | 3.2+oqs ML-DSA-65 | 3.2+oqs p384_mldsa65 | 3.5 ECDSA | 3.5 ECDSA hybrid-only | 3.5 ML-DSA-65 | 3.5 ECDSA+ML-DSA dual | 3.0+oqs ECDSA | 3.0+oqs ECDSA hybrid-only |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| go | FAIL | FAIL | FAIL | X25519MLKEM768 | FAIL | FAIL | X25519MLKEM768 | X25519MLKEM768 | FAIL | X25519MLKEM768 | FAIL | X25519MLKEM768 |
+
+### client groups = x25519
+
+| client \ server | 3.0 ECDSA | 3.2 ECDSA | 3.2+oqs ECDSA | 3.2+oqs ECDSA hybrid-only | 3.2+oqs ML-DSA-65 | 3.2+oqs p384_mldsa65 | 3.5 ECDSA | 3.5 ECDSA hybrid-only | 3.5 ML-DSA-65 | 3.5 ECDSA+ML-DSA dual | 3.0+oqs ECDSA | 3.0+oqs ECDSA hybrid-only |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| go | X25519 | X25519 | X25519 | FAIL | FAIL | FAIL | X25519 | FAIL | FAIL | X25519 | X25519 | FAIL |

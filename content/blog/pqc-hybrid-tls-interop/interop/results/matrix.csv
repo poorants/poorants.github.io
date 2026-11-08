@@ -1,0 +1,277 @@
+client,server,mode,outcome,group,cipher,peer_sig,clienthello,clienthello2,clienthello_record,hrr,serverhello,certificate,certverify,wire_out,wire_in,error,sclient,lib
+ossl30,srv30:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,79,321,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,79,303,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,79,321,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,79,303,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,78,321,1305,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,79,303,1306,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4432,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40075A99C3770000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4432,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4432,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4067BEF257730000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4432,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4433,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4017D3A4DF750000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4433,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4433,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40976E371F760000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4433,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4434,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,79,321,1306,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4434,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4434,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,79,303,1306,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv35:4434,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,78,321,1283,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30oqs:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,79,303,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30oqs:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30oqs:4432,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40172C226C780000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30oqs:4432,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30oqs:4432,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40C76A25BC790000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv30oqs:4432,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,79,321,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,80,303,1285,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4432,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4047917CEC7D0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4432,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4432,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40778BE8C8780000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4432,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4433,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,409737420F710000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4433,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4433,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4017FCE9447D0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4433,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4435,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40479921C1780000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4435,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4435,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40577711607A0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30,srv32oqs:4435,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.0.2 15 Mar 2022
+ossl32,srv30:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,243,0,,0,122,926,79,328,1284,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,225,0,,0,122,926,79,310,1284,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,243,0,,0,122,926,79,328,1284,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,225,0,,0,122,926,79,310,1284,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,243,0,,0,122,926,78,328,1305,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,225,0,,0,122,926,79,310,1306,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4432,DEFAULT,fail,,,,243,0,,0,0,0,0,248,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.4|8012BDEE5F710000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4432,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4432,X25519,fail,,,,225,0,,0,0,0,0,230,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.4|8022D8BAF77C0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4432,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4433,DEFAULT,fail,,,,243,0,,0,0,0,0,248,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.4|80F20A550A7E0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4433,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4433,X25519,fail,,,,225,0,,0,0,0,0,230,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.4|80E299A89C710000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4433,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4434,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,243,0,,0,122,926,79,328,1306,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4434,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4434,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,225,0,,0,122,926,79,310,1306,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv35:4434,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,243,0,,0,122,926,79,328,1284,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30oqs:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,225,0,,0,122,926,78,310,1283,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30oqs:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30oqs:4432,DEFAULT,fail,,,,243,0,,0,0,0,0,248,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.5|8092EDE470710000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30oqs:4432,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30oqs:4432,X25519,fail,,,,225,0,,0,0,0,0,230,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.5|8042D7F4B2720000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv30oqs:4432,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,243,0,,0,122,926,80,328,1285,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4431,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,225,0,,0,122,926,78,310,1283,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4431,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4432,DEFAULT,fail,,,,243,0,,0,0,0,0,248,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80F20A8C887C0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4432,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4432,X25519,fail,,,,225,0,,0,0,0,0,230,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80723AD6E97D0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4432,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4433,DEFAULT,fail,,,,243,0,,0,0,0,0,248,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80D21B787B7C0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4433,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4433,X25519,fail,,,,225,0,,0,0,0,0,230,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80E297E7807F0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4433,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4435,DEFAULT,fail,,,,243,0,,0,0,0,0,248,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|8052AB2D51730000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4435,X25519MLKEM768,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4435,X25519,fail,,,,225,0,,0,0,0,0,230,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80B28165C97E0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32,srv32oqs:4435,X25519MLKEM768:X25519,client-config-error,,,,,,,,,,,,,error:00000000:lib(0)::reason(0),"Call to SSL_CONF_cmd(-groups, X25519MLKEM768:X25519) failed|",OpenSSL 3.2.4 11 Feb 2025
+ossl35,srv30:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1471,0,,0,122,926,79,1556,1284,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30:4431,X25519MLKEM768,fail,,,,1413,0,,0,0,0,0,1418,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.2|80F7FDC1837B0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,237,0,,0,122,926,79,322,1284,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1423,239,,88,122,926,78,1752,1376,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1471,0,,0,122,926,79,1556,1284,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32:4431,X25519MLKEM768,fail,,,,1413,0,,0,0,0,0,1418,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.3|80D7830833740000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,237,0,,0,122,926,79,322,1284,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1423,239,,88,122,926,79,1752,1377,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4431,DEFAULT,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1471,0,,0,1210,926,79,1556,2372,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4431,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1413,0,,0,1210,926,80,1498,2373,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,237,0,,0,122,926,80,322,1307,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4431,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1423,0,,0,1210,926,79,1508,2372,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4432,DEFAULT,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1471,0,,0,1210,926,79,1556,2372,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4432,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1413,0,,0,1210,926,78,1498,2371,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4432,X25519,fail,,,,237,0,,0,0,0,0,242,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.4|80A75B559D700000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4432,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1423,0,,0,1210,926,80,1508,2373,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4433,DEFAULT,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1471,0,,0,1210,11180,3317,1556,15864,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4433,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1413,0,,0,1210,11180,3317,1498,15864,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4433,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,mldsa65,237,0,,0,122,11180,3317,322,14798,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4433,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1423,0,,0,1210,11180,3317,1508,15864,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4434,DEFAULT,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1471,0,,0,1210,11180,3317,1556,15864,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4434,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1413,0,,0,1210,11180,3317,1498,15864,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4434,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,mldsa65,237,0,,0,122,11180,3317,322,14798,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv35:4434,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1423,0,,0,1210,11180,3317,1508,15864,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1471,0,,0,122,926,79,1556,1284,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30oqs:4431,X25519MLKEM768,fail,,,,1413,0,,0,0,0,0,1418,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.5|8087CE978B7A0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,237,0,,0,122,926,78,322,1283,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30oqs:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1423,239,,88,122,926,78,1752,1376,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30oqs:4432,DEFAULT,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1471,0,,0,1210,926,80,1556,2373,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30oqs:4432,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1413,0,,0,1210,926,78,1498,2371,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30oqs:4432,X25519,fail,,,,237,0,,0,0,0,0,242,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.5|80E7038F07700000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv30oqs:4432,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1423,0,,0,1210,926,78,1508,2371,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1471,0,,0,122,926,79,1556,1284,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4431,X25519MLKEM768,fail,,,,1413,0,,0,0,0,0,1418,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|8087E0F801730000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,237,0,,0,122,926,79,322,1284,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1423,239,,88,122,926,79,1752,1377,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4432,DEFAULT,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1471,0,,0,1210,926,79,1556,2372,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4432,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1413,0,,0,1210,926,79,1498,2372,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4432,X25519,fail,,,,237,0,,0,0,0,0,242,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80E77508B97D0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4432,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,ecdsa_secp256r1_sha256,1423,0,,0,1210,926,80,1508,2373,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4433,DEFAULT,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1471,0,,0,1210,11192,3317,1556,15876,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4433,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1413,0,,0,1210,11192,3317,1498,15876,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4433,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,mldsa65,237,0,,0,122,11192,3317,322,14800,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4433,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1423,0,,0,1210,11192,3317,1508,15876,,,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4435,DEFAULT,fail,,,,1471,0,,0,0,0,0,1476,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80175DED24730000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4435,X25519MLKEM768,fail,,,,1413,0,,0,0,0,0,1418,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80378DF4EB730000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4435,X25519,fail,,,,237,0,,0,0,0,0,242,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80B769A92C7A0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl35,srv32oqs:4435,X25519MLKEM768:X25519,fail,,,,1423,0,,0,0,0,0,1428,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|8027A0FA67780000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:../ssl/record/rec_layer_s3.c:918:SSL alert number 40|,OpenSSL 3.5.7 9 Jun 2026
+ossl30-oqs,srv30:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,79,321,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30:4431,X25519MLKEM768,fail,,,,1394,0,,0,0,0,0,1399,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4047DD6493750000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,80,303,1285,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1404,220,,88,122,926,79,1714,1377,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,79,321,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32:4431,X25519MLKEM768,fail,,,,1394,0,,0,0,0,0,1399,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40D76252407C0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,79,303,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1404,220,,88,122,926,80,1714,1378,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,79,321,1306,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4431,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1394,0,,0,1210,926,80,1479,2373,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,79,303,1306,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4431,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1404,0,,0,1210,926,79,1489,2372,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4432,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40B73368EE750000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4432,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1394,0,,0,1210,926,79,1479,2372,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4432,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40D7D15A48760000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4432,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1404,0,,0,1210,926,79,1489,2372,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4433,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4047FBBDDF7F0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4433,X25519MLKEM768,fail,,,,1394,0,,0,0,0,0,1399,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4067A17374720000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4433,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4097C4A6C9740000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4433,X25519MLKEM768:X25519,fail,,,,1404,0,,0,0,0,0,1409,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4017CD0B02780000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4434,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,78,321,1305,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4434,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1394,0,,0,1210,926,79,1479,2372,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4434,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,79,303,1306,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv35:4434,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1404,0,,0,1210,926,79,1489,2372,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,79,321,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30oqs:4431,X25519MLKEM768,fail,,,,1394,0,,0,0,0,0,1399,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40A7B028CF790000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,79,303,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30oqs:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1404,220,,88,122,926,79,1714,1377,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30oqs:4432,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4067C15CCB700000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30oqs:4432,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1394,0,,0,1210,926,79,1479,2372,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30oqs:4432,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40879B41137F0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv30oqs:4432,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1404,0,,0,1210,926,80,1489,2373,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,236,0,,0,122,926,79,321,1284,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4431,X25519MLKEM768,fail,,,,1394,0,,0,0,0,0,1399,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4067B0E308750000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,218,0,,0,122,926,78,303,1283,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1404,220,,88,122,926,80,1714,1378,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4432,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40E7BAA7AA780000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4432,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1394,0,,0,1210,926,79,1479,2372,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4432,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40275FEE95710000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4432,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1404,0,,0,1210,926,79,1489,2372,,,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4433,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40671426CE770000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4433,X25519MLKEM768,fail,,,,1394,0,,0,0,0,0,1399,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40D70C5181750000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4433,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40E742595B710000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4433,X25519MLKEM768:X25519,fail,,,,1404,0,,0,0,0,0,1409,7,error:0A000410:SSL routines::sslv3 alert handshake failure,405728946E7C0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4435,DEFAULT,fail,,,,236,0,,0,0,0,0,241,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40F7AF467E7E0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4435,X25519MLKEM768,fail,,,,1394,0,,0,0,0,0,1399,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40B77669A8750000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4435,X25519,fail,,,,218,0,,0,0,0,0,223,7,error:0A000410:SSL routines::sslv3 alert handshake failure,4057CA599F7F0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl30-oqs,srv32oqs:4435,X25519MLKEM768:X25519,fail,,,,1404,0,,0,0,0,0,1409,7,error:0A000410:SSL routines::sslv3 alert handshake failure,40D7F437C47A0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1593:SSL alert number 40|,OpenSSL 3.0.2 15 Mar 2022
+ossl32-oqs,srv30:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,363,0,,0,122,926,80,448,1285,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30:4431,X25519MLKEM768,fail,,,,1521,0,,0,0,0,0,1526,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.2|80A2613C107F0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,345,0,,0,122,926,78,430,1283,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1531,347,,88,122,926,80,1968,1378,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,363,0,,0,122,926,79,448,1284,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32:4431,X25519MLKEM768,fail,,,,1521,0,,0,0,0,0,1526,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.3|806222B3C87E0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,345,0,,0,122,926,80,430,1285,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1531,347,,88,122,926,78,1968,1376,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,363,0,,0,122,926,80,448,1307,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4431,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1521,0,,0,1210,926,78,1606,2371,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,345,0,,0,122,926,80,430,1307,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4431,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1531,0,,0,1210,926,79,1616,2372,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4432,DEFAULT,fail,,,,363,0,,0,0,0,0,368,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.4|8032E8AF4E790000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4432,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1521,0,,0,1210,926,78,1606,2371,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4432,X25519,fail,,,,345,0,,0,0,0,0,350,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.4|8092071162770000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4432,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1531,0,,0,1210,926,79,1616,2372,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4433,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,mldsa65,363,0,,0,122,11180,3317,448,14798,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4433,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1521,0,,0,1210,11180,3317,1606,15864,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4433,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,mldsa65,345,0,,0,122,11180,3317,430,14798,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4433,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1531,0,,0,1210,11180,3317,1616,15864,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4434,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,363,0,,0,122,926,78,448,1305,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4434,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1521,0,,0,1210,926,78,1606,2371,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4434,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,345,0,,0,122,926,80,430,1307,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv35:4434,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1531,0,,0,1210,926,78,1616,2371,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,363,0,,0,122,926,79,448,1284,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30oqs:4431,X25519MLKEM768,fail,,,,1521,0,,0,0,0,0,1526,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.5|8022119EEC7D0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,345,0,,0,122,926,79,430,1284,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30oqs:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1531,347,,88,122,926,80,1968,1378,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30oqs:4432,DEFAULT,fail,,,,363,0,,0,0,0,0,368,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.5|80A20498FE6F0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30oqs:4432,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1521,0,,0,1210,926,79,1606,2372,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30oqs:4432,X25519,fail,,,,345,0,,0,0,0,0,350,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.5|80D23DFCF27D0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv30oqs:4432,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1531,0,,0,1210,926,79,1616,2372,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4431,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,363,0,,0,122,926,79,448,1284,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4431,X25519MLKEM768,fail,,,,1521,0,,0,0,0,0,1526,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80128BBEBB780000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4431,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,345,0,,0,122,926,78,430,1283,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4431,X25519MLKEM768:X25519,ok-hrr,x25519,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1531,347,,88,122,926,80,1968,1378,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4432,DEFAULT,fail,,,,363,0,,0,0,0,0,368,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|809223CC177D0000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4432,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1521,0,,0,1210,926,80,1606,2373,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4432,X25519,fail,,,,345,0,,0,0,0,0,350,7,error:0A000410:SSL routines::ssl/tls alert handshake failure,Connecting to 172.18.0.6|80F2B754DA770000:error:0A000410:SSL routines:ssl3_read_bytes:ssl/tls alert handshake failure:ssl/record/rec_layer_s3.c:909:SSL alert number 40|,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4432,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,id-ecPublicKey,1531,0,,0,1210,926,78,1616,2371,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4433,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,mldsa65,363,0,,0,122,11192,3317,448,14800,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4433,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1521,0,,0,1210,11192,3317,1606,15876,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4433,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,mldsa65,345,0,,0,122,11192,3317,430,14800,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4433,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,mldsa65,1531,0,,0,1210,11192,3317,1616,15876,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4435,DEFAULT,ok,x25519,TLS_AES_256_GCM_SHA384,p384_mldsa65,363,0,,0,122,11587,3425,448,15303,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4435,X25519MLKEM768,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,p384_mldsa65,1521,0,,0,1210,11587,3424,1606,16378,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4435,X25519,ok,x25519,TLS_AES_256_GCM_SHA384,p384_mldsa65,345,0,,0,122,11587,3423,430,15301,,,OpenSSL 3.2.4 11 Feb 2025
+ossl32-oqs,srv32oqs:4435,X25519MLKEM768:X25519,ok,X25519MLKEM768,TLS_AES_256_GCM_SHA384,p384_mldsa65,1531,0,,0,1210,11587,3424,1616,16378,,,OpenSSL 3.2.4 11 Feb 2025
+go,srv30:4431,default,ok,X25519,TLS_AES_128_GCM_SHA256,,,,1471,,,,,,,,,go1.25.14
+go,srv30:4431,hybrid,fail,,,,,,1427,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv30:4431,x25519,ok,X25519,TLS_AES_128_GCM_SHA256,,,,243,,,,,,,,,go1.25.14
+go,srv32:4431,default,ok,X25519,TLS_AES_128_GCM_SHA256,,,,1471,,,,,,,,,go1.25.14
+go,srv32:4431,hybrid,fail,,,,,,1427,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv32:4431,x25519,ok,X25519,TLS_AES_128_GCM_SHA256,,,,243,,,,,,,,,go1.25.14
+go,srv35:4431,default,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1471,,,,,,,,,go1.25.14
+go,srv35:4431,hybrid,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1427,,,,,,,,,go1.25.14
+go,srv35:4431,x25519,ok,X25519,TLS_AES_128_GCM_SHA256,,,,243,,,,,,,,,go1.25.14
+go,srv35:4432,default,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1471,,,,,,,,,go1.25.14
+go,srv35:4432,hybrid,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1427,,,,,,,,,go1.25.14
+go,srv35:4432,x25519,fail,,,,,,243,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv35:4433,default,fail,,,,,,1471,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv35:4433,hybrid,fail,,,,,,1427,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv35:4433,x25519,fail,,,,,,243,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv35:4434,default,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1471,,,,,,,,,go1.25.14
+go,srv35:4434,hybrid,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1427,,,,,,,,,go1.25.14
+go,srv35:4434,x25519,ok,X25519,TLS_AES_128_GCM_SHA256,,,,243,,,,,,,,,go1.25.14
+go,srv30oqs:4431,default,ok,X25519,TLS_AES_128_GCM_SHA256,,,,1471,,,,,,,,,go1.25.14
+go,srv30oqs:4431,hybrid,fail,,,,,,1427,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv30oqs:4431,x25519,ok,X25519,TLS_AES_128_GCM_SHA256,,,,243,,,,,,,,,go1.25.14
+go,srv30oqs:4432,default,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1471,,,,,,,,,go1.25.14
+go,srv30oqs:4432,hybrid,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1427,,,,,,,,,go1.25.14
+go,srv30oqs:4432,x25519,fail,,,,,,243,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv32oqs:4431,default,ok,X25519,TLS_AES_128_GCM_SHA256,,,,1471,,,,,,,,,go1.25.14
+go,srv32oqs:4431,hybrid,fail,,,,,,1427,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv32oqs:4431,x25519,ok,X25519,TLS_AES_128_GCM_SHA256,,,,243,,,,,,,,,go1.25.14
+go,srv32oqs:4432,default,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1471,,,,,,,,,go1.25.14
+go,srv32oqs:4432,hybrid,ok,X25519MLKEM768,TLS_AES_128_GCM_SHA256,,,,1427,,,,,,,,,go1.25.14
+go,srv32oqs:4432,x25519,fail,,,,,,243,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv32oqs:4433,default,fail,,,,,,1471,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv32oqs:4433,hybrid,fail,,,,,,1427,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv32oqs:4433,x25519,fail,,,,,,243,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv32oqs:4435,default,fail,,,,,,1471,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv32oqs:4435,hybrid,fail,,,,,,1427,,,,,,,remote error: tls: handshake failure,,go1.25.14
+go,srv32oqs:4435,x25519,fail,,,,,,243,,,,,,,remote error: tls: handshake failure,,go1.25.14
