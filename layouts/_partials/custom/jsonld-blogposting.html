@@ -1,0 +1,23 @@
+{{- /* schema.org BlogPosting for a blog post. Called from custom/head-end.html. */ -}}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+{{- $img := partialCached "custom/og-image.html" . .Permalink -}}
+{{- $image := dict "@type" "ImageObject" "url" $img.url -}}
+{{- if and $img.width $img.height }}{{ $image = merge $image (dict "width" $img.width "height" $img.height) }}{{ end -}}
+{{- $author := dict "@type" "Person" "name" (site.Params.author.name | default site.Title) -}}
+{{- with site.Params.author.url }}{{ $author = merge $author (dict "url" (absLangURL .)) }}{{ end -}}
+{{- $data := dict
+    "@context" "https://schema.org"
+    "@type" "BlogPosting"
+    "headline" (.Title | plainify | htmlUnescape)
+    "url" .Permalink
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+    "inLanguage" site.Language.Lang
+    "image" $image
+    "author" $author
+    "publisher" (dict "@type" "Person" "name" $author.name)
+-}}
+{{- with partial "utils/page-description.html" . | htmlUnescape | strings.TrimSpace }}{{ $data = merge $data (dict "description" .) }}{{ end -}}
+{{- with .PublishDate }}{{ $data = merge $data (dict "datePublished" (.Format $iso8601)) }}{{ end -}}
+{{- with .Lastmod }}{{ $data = merge $data (dict "dateModified" (.Format $iso8601)) }}{{ end -}}
+{{- with .Params.tags }}{{ $data = merge $data (dict "keywords" (delimit . ", ")) }}{{ end -}}
+<script type="application/ld+json">{{ $data | jsonify | safeJS }}</script>

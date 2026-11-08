@@ -1,0 +1,93 @@
+{{- /*
+  Resolve the social preview image (og:image / twitter:image / JSON-LD image) for a page.
+  Returns a dict: url (absolute), width, height (0 when unknown), alt.
+
+  Order of precedence:
+    1. Front matter `images = ["..."]` (first entry): a page resource name or a site path / URL.
+    2. A page bundle resource named cover.* or featured.*.
+    3. Regular pages: a 1200x630 PNG generated at build time from the page title.
+    4. Everything else (home, sections, taxonomies): a generated site default image
+       with the site title.
+
+  Generated images are drawn with images.Text on assets/og/background.png using
+  assets/fonts/Pretendard-Bold.ttf (Hangul + Latin). Call via
+  partialCached "custom/og-image.html" . .Permalink
+*/ -}}
+{{- $url := "" -}}
+{{- $width := 0 -}}
+{{- $height := 0 -}}
+{{- $alt := .Title | default site.Title | plainify | htmlUnescape -}}
+
+{{- /* 1. Front matter override */ -}}
+{{- with .Params.images -}}
+  {{- $first := index . 0 -}}
+  {{- with $.Resources.GetMatch $first -}}
+    {{- $url = .Permalink -}}
+    {{- if eq .ResourceType "image" -}}
+      {{- $width = .Width -}}
+      {{- $height = .Height -}}
+    {{- end -}}
+  {{- else -}}
+    {{- with resources.Get (strings.TrimPrefix "/" $first) -}}
+      {{- $url = .Permalink -}}
+      {{- if eq .ResourceType "image" -}}
+        {{- $width = .Width -}}
+        {{- $height = .Height -}}
+      {{- end -}}
+    {{- else -}}
+      {{- if or (hasPrefix $first "http://") (hasPrefix $first "https://") -}}
+        {{- $url = $first -}}
+      {{- else -}}
+        {{- $url = strings.TrimPrefix "/" $first | absURL -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 2. Bundle cover / featured image */ -}}
+{{- if not $url -}}
+  {{- with .Resources.GetMatch "{cover,featured}.*" -}}
+    {{- if eq .ResourceType "image" -}}
+      {{- $url = .Permalink -}}
+      {{- $width = .Width -}}
+      {{- $height = .Height -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 3./4. Generated image */ -}}
+{{- if not $url -}}
+  {{- $bg := resources.Get "og/background.png" -}}
+  {{- $panel := resources.Get "og/title-panel.png" -}}
+  {{- $font := resources.Get "fonts/Pretendard-Bold.ttf" -}}
+
+  {{- $text := site.Title -}}
+  {{- if .IsPage -}}
+    {{- $text = .Title | plainify | htmlUnescape -}}
+  {{- end -}}
+  {{- $text = trim $text " \n\r\t" -}}
+  {{- if gt (strings.RuneCount $text) 90 -}}
+    {{- $text = printf "%s…" (trim (substr $text 0 88) " ") -}}
+  {{- end -}}
+
+  {{- /* Shrink the font as the title grows so up to ~4 lines fit the 1040x380 panel. */ -}}
+  {{- $n := strings.RuneCount $text -}}
+  {{- $size := 76 -}}
+  {{- if gt $n 60 }}{{ $size = 54 }}{{ else if gt $n 36 }}{{ $size = 62 }}{{ else if gt $n 18 }}{{ $size = 68 }}{{ end -}}
+
+  {{- /* The title is drawn on a transparent panel first, so wrapping respects a right margin
+         (images.Text wraps at canvas width - 20), then the panel is overlaid on the background. */ -}}
+  {{- $title := $panel | images.Filter (images.Text $text (dict
+      "font" $font "size" $size "color" "#f8fafc" "linespacing" (math.Round (mul $size 0.28))
+      "x" 0 "y" 190 "alignx" "left" "aligny" "center")) -}}
+
+  {{- $footer := printf "%s  ·  %s" site.Title (strings.TrimSuffix "/" (strings.TrimPrefix "https://" site.BaseURL)) -}}
+  {{- $img := $bg | images.Filter
+      (images.Overlay $title 80 110)
+      (images.Text $footer (dict "font" $font "size" 30 "color" "#94a3b8" "x" 80 "y" 548 "alignx" "left")) -}}
+  {{- $url = $img.Permalink -}}
+  {{- $width = $img.Width -}}
+  {{- $height = $img.Height -}}
+{{- end -}}
+
+{{- return (dict "url" $url "width" $width "height" $height "alt" $alt) -}}

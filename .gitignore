@@ -5,3 +5,4 @@ resources/_gen/
 node_modules/
 .idea/
 .vscode/
+.lycheecache
