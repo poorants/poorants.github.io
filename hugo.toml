@@ -31,6 +31,9 @@ noClasses = false
     locale = "ko"
     weight = 1
     title = "인생은 펠리컨처럼!"
+    [languages.ko.params.author]
+      name = "김동훈"
+      url = "/about/"
     [languages.ko.menus]
       [[languages.ko.menus.main]]
         identifier = "blog"
@@ -60,6 +63,9 @@ noClasses = false
     locale = "en"
     weight = 2
     title = "Live Like a Pelican!"
+    [languages.en.params.author]
+      name = "Donghun Kim"
+      url = "/about/"
     [languages.en.menus]
       [[languages.en.menus.main]]
         identifier = "blog"

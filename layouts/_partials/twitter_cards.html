@@ -1,0 +1,21 @@
+{{- /*
+  Overrides Hugo's embedded twitter_cards.html (called from the Hextra head partial).
+  Always a large image card: custom/og-image.html guarantees an image for every page.
+  Description comes from the same partial as <meta name="description"> and og:description.
+*/ -}}
+{{- $desc := partial "utils/page-description.html" . | htmlUnescape | strings.TrimSpace -}}
+{{- $img := partialCached "custom/og-image.html" . .Permalink -}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title | default site.Title | plainify | htmlUnescape }}">
+{{- with $desc }}
+<meta name="twitter:description" content="{{ . }}">
+{{- end }}
+<meta name="twitter:image" content="{{ $img.url }}">
+<meta name="twitter:image:alt" content="{{ $img.alt }}">
+{{- with site.Params.social }}
+{{- if reflect.IsMap . }}
+{{- with .twitter }}
+<meta name="twitter:site" content="{{ if hasPrefix . "@" }}{{ . }}{{ else }}@{{ . }}{{ end }}">
+{{- end }}
+{{- end }}
+{{- end }}
