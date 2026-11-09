@@ -14,7 +14,7 @@ This post gathers those dates onto a single page. It traces what is mandatory an
 
 ## The Threat Model Is Already Drawn
 
-In [my June post](/en/blog/quantum-threat-symmetric-vs-pki/) I argued that what quantum computers break is public-key cryptography, not symmetric cryptography. Ciphertext stored under AES holds up as long as the key is long enough, but TLS key exchange and certificate and code signing collapse at the level of their design principles in the face of Shor's algorithm. And because of "Harvest Now, Decrypt Later" attacks, which collect traffic today to decrypt it later, data that must stay secret for a long time is already exposed today.
+In [why quantum computers won't break your database ciphertext](/en/blog/quantum-threat-symmetric-vs-pki/) I argued that what quantum computers break is public-key cryptography, not symmetric cryptography. Ciphertext stored under AES holds up as long as the key is long enough, but TLS key exchange and certificate and code signing collapse at the level of their design principles in the face of Shor's algorithm. And because of "Harvest Now, Decrypt Later" attacks, which collect traffic today to decrypt it later, data that must stay secret for a long time is already exposed today.
 
 If that post covered "what is at risk," this one covers "what has to change, and by when." That question is answered by a schedule, not by technology. With FIPS 203 (ML-KEM), FIPS 204 (ML-DSA) and FIPS 205 (SLH-DSA) finalized by NIST in August 2024, the standards were in place. What governments have produced in the two years since is not new algorithms but dates.
 
@@ -93,7 +93,7 @@ Once you have read the schedule, the work turns out to start with an inventory r
 
 Place the scattered notices on one line and it becomes clear that 2035 is the end, not the start. Before it, key exchange moves ahead of signatures, and the default that bridges the two is hybrid. The US attached enforcement to its dates, and Europe and the UK fixed their waypoints. Korea set dates for its validation program and a legal basis at the same time.
 
-But "it has become the default" and "it interoperates cleanly" are different statements. Browsers and large CDNs turning on hybrid does not mean the clients and servers of an in-house system run the same library version. How does an older version that does not know the hybrid group handle the larger ClientHello? Does negotiation quietly fall back to the classical scheme, or does it fail? What error does a party that cannot read a hybrid certificate produce? In [the next post](/en/blog/pqc-hybrid-tls-interop/) I cover the results of measuring this directly in an environment with mixed versions.
+But "it has become the default" and "it interoperates cleanly" are different statements. Browsers and large CDNs turning on hybrid does not mean the clients and servers of an in-house system run the same library version. How does an older version that does not know the hybrid group handle the larger ClientHello? Does negotiation quietly fall back to the classical scheme, or does it fail? What error does a party that cannot read a hybrid certificate produce? In the next post, [hybrid PQC TLS measured](/en/blog/pqc-hybrid-tls-interop/), I cover the results of measuring this directly in an environment with mixed versions.
 
 ## Sources
 

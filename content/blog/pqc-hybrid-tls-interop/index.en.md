@@ -8,7 +8,7 @@ description = "I mixed OpenSSL 3.0, 3.2, 3.5 and Go over hybrid post-quantum TLS
 
 "Post-quantum key exchange is now the default" is true. OpenSSL 3.5 and Go 1.25 connect with hybrid key exchange (X25519MLKEM768) with no configuration. But connect an OpenSSL 3.0 client to a 3.5 server and the connection settles on X25519. No error, no warning. You can upgrade the server and call the migration done, and everything still looks fine. That looking-fine is the danger.
 
-The timeline in the [previous post](/en/blog/pqc-transition-timeline-2035/) put key exchange ahead of signatures. This time I measured what actually connects and what breaks when versions are mixed, and how much bigger and slower things get. The result fits in one sentence: switch key exchange now, and don't rush certificates; serve both.
+[The post-quantum transition timeline](/en/blog/pqc-transition-timeline-2035/) put key exchange ahead of signatures. This time I measured what actually connects and what breaks when versions are mixed, and how much bigger and slower things get. The result fits in one sentence: switch key exchange now, and don't rush certificates; serve both.
 
 ## I mixed the versions and connected every pair
 
