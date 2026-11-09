@@ -1,6 +1,6 @@
 +++
 title = "MCP 를 서버로 올렸더니 '업데이트해 주세요' 공지가 사라졌다"
-date = 2026-11-19T00:00:00+09:00
+date = 2026-11-16T00:00:00+09:00
 draft = false
 tags = ["mcp", "developer-experience", "claude-code", "platform-engineering", "security"]
 description = "팀이 쓰는 사내 MCP 를 각자의 PC 에서 서버 한 대로 올렸다. 업데이트 공지가 사라졌고, 새 사람은 바로 팀 AX 환경에 들어오고, 계정은 대시보드 한 곳에서, 등록은 토큰 하나로 끝난다."

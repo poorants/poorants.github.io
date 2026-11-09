@@ -1,6 +1,6 @@
 +++
 title = "Moving MCP to a server ended our 'please update' messages"
-date = 2026-11-19T00:00:00+09:00
+date = 2026-11-16T00:00:00+09:00
 draft = false
 tags = ["mcp", "developer-experience", "claude-code", "platform-engineering", "security"]
 description = "We moved our team's internal MCP from each PC to one server. Update notices are gone, new hires start in minutes, accounts and tokens live in one place."
