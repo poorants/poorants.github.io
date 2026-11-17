@@ -1,6 +1,6 @@
 +++
 title = "I moved my API keys into one hub, and my agents stopped seeing them"
-date = 2026-11-20T00:00:00+09:00
+date = 2026-11-18T00:00:00+09:00
 draft = false
 tags = ["mcp", "ai-agent", "security", "secrets-management", "platform-engineering"]
 description = "I moved my personal API keys into a hub on one server. Rotating a key no longer means visiting every PC, and agents carry one scoped token. Part 1: tokens and scopes."

@@ -1,6 +1,6 @@
 +++
 title = "API 키를 허브 한 곳에 넣었더니, 에이전트가 키를 볼 일이 없어졌다"
-date = 2026-11-20T00:00:00+09:00
+date = 2026-11-18T00:00:00+09:00
 draft = false
 tags = ["mcp", "ai-agent", "security", "secrets-management", "platform-engineering"]
 description = "개인적으로 쓰는 API 키를 서버 한 대의 허브로 옮겼다. 키를 바꾸는 날 PC 를 돌지 않고, 에이전트와 스크립트는 범위가 정해진 토큰 하나만 든다. 1부는 토큰과 권한 이야기."
