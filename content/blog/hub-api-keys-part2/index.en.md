@@ -1,7 +1,7 @@
 +++
 title = "Setting up a new PC no longer asks me for a password"
 date = 2026-11-23T00:00:00+09:00
-draft = true
+draft = false
 tags = ["mcp", "security", "tailscale", "secrets-management", "developer-experience"]
 description = "Key originals live in Vaultwarden, working copies in the hub. The hub opens only on my tailnet, with no login page, and a new PC takes a few commands. Hub, part 2."
 +++

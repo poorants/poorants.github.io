@@ -1,7 +1,7 @@
 +++
 title = "새 PC 세팅에서 비밀번호 입력이 사라졌다"
 date = 2026-11-23T00:00:00+09:00
-draft = true
+draft = false
 tags = ["mcp", "security", "tailscale", "secrets-management", "developer-experience"]
 description = "API 키는 Vaultwarden 에 원본, 허브에 사본. 허브 화면은 테일넷 안에서만 열리고 로그인 화면이 없다. 새 PC 는 명령 몇 줄과 토큰 한 줄로 끝난다. 허브 2부."
 +++
