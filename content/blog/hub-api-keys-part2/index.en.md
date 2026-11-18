@@ -3,7 +3,7 @@ title = "Setting up a new PC no longer asks me for a password"
 date = 2026-11-23T00:00:00+09:00
 draft = false
 tags = ["mcp", "security", "tailscale", "secrets-management", "developer-experience"]
-description = "Key originals live in Vaultwarden, working copies in the hub. The hub opens only on my tailnet, with no login page, and a new PC takes a few commands. Hub, part 2."
+description = "Key originals live in Vaultwarden, working copies in the hub. The hub opens only on my tailnet, with no login page; a new PC takes a few commands."
 +++
 
 Setting up a new PC used to include a separate step for moving keys. I signed in to Vaultwarden, downloaded the attachment, put it in place and fixed its permissions. That step is gone, because no key file ever lands on the new PC. I don't type a password at any point during setup either.
